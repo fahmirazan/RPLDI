@@ -7,6 +7,7 @@ package layout;
 
 import Database.DBConnect;
 import java.sql.PreparedStatement;
+import java.awt.HeadlessException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -207,30 +208,27 @@ public class register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1registerregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1registerregisterActionPerformed
-        String uname = jTextFieldUsername1.getText(); // untuk mengambil String username
-        String name = jTextField1nama.getText(); // untuk mengambil String nama
-        String pass = String.valueOf(jPasswordFieldPassword.getPassword()); // untuk mengambil string Password
-        String telp = jTextField2telepon.getText(); // untuk mengambil string nomor telepon
-        String adres = jTextField3alamat.getText(); // untuk mengambil string address
+        String uname = jTextFieldUsername1.getText();
+        String name = jTextField1nama.getText();
+        String pass = String.valueOf(jPasswordFieldPassword.getPassword());
+        String telp = jTextField2telepon.getText();
+        String adres = jTextField3alamat.getText();
 
-        PreparedStatement ps; // menyiapkan variabel tipe PreparedStatement
-        
-        // query untuk meng insert data customer
+        PreparedStatement ps;
         String query = "INSERT INTO `sqlcostumer`(`username`, `nama`, `password`, `no_telp`, `alamat`) VALUES (?,?,?,?,?)";
         try {
-            ps = (PreparedStatement) DBConnect.getConnection().prepareStatement(query); // menyiapakan query ke dalam preparedStatement
-            ps.setString(1, uname); // set kolom 1
-            ps.setString(2, name); // set kolom 2
-            ps.setString(3, pass); // set kolom 3
-            ps.setString(4, telp); // set kolom 4
-            ps.setString(5, adres); // set kolom 5
+            ps = (PreparedStatement) DBConnect.getConnection().prepareStatement(query);
+            ps.setString(1, uname);
+            ps.setString(2, name);
+            ps.setString(3, pass);
+            ps.setString(4, telp);
+            ps.setString(5, adres);
 
-            // melakukan eksekusi statement dan mengecek apakah data telah ditambah
-            if (ps.executeUpdate() > 0) {// jika data yang ditambah lebih dari 0 maka akan dikirimkan pesan "New user add"
+            if (ps.executeUpdate() > 0) {
                 JOptionPane.showMessageDialog(null, "New user add");
             }
 
-        // untuk error handling
+// TODO add your handling code here:
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -257,12 +255,11 @@ public class register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3alamatActionPerformed
 
-    //tombol untuk kembali ke menu login
     private void jButton2backloginbackloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2backloginbackloginActionPerformed
-        this.dispose(); // hilangkan halaman register
-        login obj = null; // buat variabel obj tipe login
+        this.dispose();
+        login obj = null;
         try {
-            obj = new login(); // deklarasi dengan login bari
+            obj = new login();
         } catch (SQLException ex) {
             Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
