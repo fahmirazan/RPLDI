@@ -6,7 +6,7 @@
 package layout;
 
 import Database.DBConnect;
-import com.mysql.jdbc.PreparedStatement;
+import java.sql.PreparedStatement;
 import java.awt.HeadlessException;
 import java.sql.SQLException;
 import java.util.logging.Level;
