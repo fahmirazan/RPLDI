@@ -6,7 +6,7 @@
 package tubes;
 
 import java.sql.SQLException;
-import layout.login;
+import view.login;
 
 /**
  *
