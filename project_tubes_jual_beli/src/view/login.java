@@ -94,7 +94,7 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        jButtonregister.setText("Register Customer");
+        jButtonregister.setText("Register Account");
         jButtonregister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonregisterActionPerformed(evt);
@@ -125,7 +125,7 @@ public class login extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                                 .addComponent(jTextFieldUsername)))))
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +160,7 @@ public class login extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(422, 422, 422))
         );
@@ -212,6 +212,7 @@ public class login extends javax.swing.JFrame {
         register obj = new register();
         obj.setVisible(true);// TODO add your handling code here:
         obj.setLocationRelativeTo(null);
+        obj.setResizable(false);
     }//GEN-LAST:event_jButtonregisterActionPerformed
 
     /**

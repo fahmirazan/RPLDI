@@ -26,6 +26,7 @@ public class Main {
         login view = new login();
         view.setLocationRelativeTo(null);
         view.setVisible(true);
+        view.setResizable(false);
     }
     
 }
