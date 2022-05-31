@@ -9,6 +9,6 @@ package model;
  *
  * @author ASUS
  */
-public class Costumer {
+public class customerModel {
     
 }

@@ -6,7 +6,7 @@
 package tubes;
 
 import java.sql.SQLException;
-import view.login;
+import view.loginPage;
 
 /**
  *
@@ -23,7 +23,7 @@ public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         // TODO code application logic here
         
-        login view = new login();
+        loginPage view = new loginPage();
         view.setLocationRelativeTo(null);
         view.setVisible(true);
         view.setResizable(false);

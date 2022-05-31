@@ -445,9 +445,9 @@ public class register extends javax.swing.JFrame {
 
     private void jButton2backloginbackloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2backloginbackloginActionPerformed
         this.dispose();
-        login obj = null;
+        loginPage obj = null;
         try {
-            obj = new login();
+            obj = new loginPage();
         } catch (SQLException ex) {
             Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -493,9 +493,9 @@ public class register extends javax.swing.JFrame {
     private void jButton2backlogin1backloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2backlogin1backloginActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        login obj = null;
+        loginPage obj = null;
         try {
-            obj = new login();
+            obj = new loginPage();
         } catch (SQLException ex) {
             Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
