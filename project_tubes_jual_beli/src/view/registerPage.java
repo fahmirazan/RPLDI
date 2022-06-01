@@ -27,6 +27,8 @@ public class registerPage extends javax.swing.JFrame {
         registerController control = new registerController(this);
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -456,7 +458,6 @@ public class registerPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CustomerTabActionPerformed
 
     private void SellerTabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SellerTabActionPerformed
-        // TODO add your handling code here:
         // TODO add your handling code here:
         ParentPanel.removeAll();
         ParentPanel.add(SellerRegisterPanel);
