@@ -6,8 +6,8 @@
 package view;
 
 import Database.DBConnect;
+import controller.registerController;
 import java.sql.PreparedStatement;
-import java.awt.HeadlessException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,13 +17,14 @@ import javax.swing.JOptionPane;
  *
  * @author fahmi
  */
-public class register extends javax.swing.JFrame {
+public class registerPage extends javax.swing.JFrame {
 
     /**
      * Creates new form register
      */
-    public register() {
+    public registerPage() {
         initComponents();
+        registerController control = new registerController(this);
     }
 
     /**
@@ -127,11 +128,9 @@ public class register extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(CustomerTab, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(SellerTab, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72))
+                .addComponent(CustomerTab, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(SellerTab, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,10 +414,8 @@ public class register extends javax.swing.JFrame {
             if (ps.executeUpdate() > 0) {
                 JOptionPane.showMessageDialog(null, "New user add");
             }
-
-// TODO add your handling code here:
-        } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(registerPage.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_RegisterCustomerButtonregisterActionPerformed
@@ -445,14 +442,7 @@ public class register extends javax.swing.JFrame {
 
     private void jButton2backloginbackloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2backloginbackloginActionPerformed
         this.dispose();
-        loginPage obj = null;
-        try {
-            obj = new loginPage();
-        } catch (SQLException ex) {
-            Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        loginPage obj = new loginPage();
         obj.setVisible(true);
         obj.setLocationRelativeTo(null);// TODO add your handling code here:
     }//GEN-LAST:event_jButton2backloginbackloginActionPerformed
@@ -493,14 +483,7 @@ public class register extends javax.swing.JFrame {
     private void jButton2backlogin1backloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2backlogin1backloginActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        loginPage obj = null;
-        try {
-            obj = new loginPage();
-        } catch (SQLException ex) {
-            Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        loginPage obj = new loginPage();
         obj.setVisible(true);
         obj.setLocationRelativeTo(null);// TODO add your handling code here:
     }//GEN-LAST:event_jButton2backlogin1backloginActionPerformed
@@ -513,40 +496,6 @@ public class register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldUsername2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new register().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CustomerRegisterPanel;
@@ -582,4 +531,6 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3alamat1;
     private javax.swing.JTextField jTextFieldUsername2;
     // End of variables declaration//GEN-END:variables
+    
+    
 }

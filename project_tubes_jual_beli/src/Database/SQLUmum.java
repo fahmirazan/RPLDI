@@ -7,17 +7,18 @@ package Database;
 
 import java.net.Socket;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author ASUS
  */
-public class SQLUmum extends DBConnect{
+public class SQLUmum extends DBConnect {
+
     Connection connection;
     Statement statement;
     String SQL;
@@ -28,66 +29,33 @@ public class SQLUmum extends DBConnect{
     int Port;
     String Host;
 
-    public SQLUmum(String url, String username, String password) {
-       
-            this.url = url;
-            this.username = username;
-            this.password = password;
-            this.Host=Host;
-            this.Port=Port;
-    }
-
-    public Connection koneksiDatabase() {
-       
-            try {
-
-                Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection(url, username, password);
-
-            } catch (ClassNotFoundException | SQLException e) {
-                System.out.println(e.toString());
-            }
-        return connection;
-    }
-
-    public Connection closeKoneksi() {
+    public ResultSet eksekusiQuery(String sql) {
+        ResultSet resultSet = null;
 
         try {
-            connection.close();
-        } catch (SQLException e) {
+            connection = getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+            System.out.println(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(SQLUmum.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return connection;
-    }
-
-    public ResultSet eksekusiQuery(String sql) {
-        koneksiDatabase();
-        ResultSet resultSet = null;
-       
-
-            try {
-                statement = connection.createStatement();
-                resultSet = statement.executeQuery(sql);
-                System.out.println(sql);
-            } catch (SQLException ex) {
-            }
-       
         return resultSet;
 
     }
 
     public String eksekusiUpdate(String sql) {
-
-        koneksiDatabase();
         String result = "";
-      
-            try {
-                statement = connection.createStatement();
-                statement.executeUpdate(sql);
-                 System.out.println(sql);
-            } catch (SQLException ex) {
-                result = ex.toString();
-            }
-       
+        try {
+            connection = getConnection();
+            statement = connection.createStatement();
+            statement.executeUpdate(sql);
+            System.out.println(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(SQLUmum.class.getName()).log(Level.SEVERE, null, ex);
+            result = ex.toString();
+        }
+
         return result;
 
     }

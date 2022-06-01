@@ -12,17 +12,20 @@ package Database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
  
 public class DBConnect {
     public static Connection con;
     
-    public static Connection getConnection() throws SQLException, ClassNotFoundException{
+    public static Connection getConnection() throws SQLException{
         if (con == null) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rpldi", "root","");
                 System.out.println("Driver ditemukan");
-            } catch (SQLException ex) {
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Error koneksi");
             }
         }

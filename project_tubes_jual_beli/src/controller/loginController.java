@@ -6,9 +6,10 @@
 package controller;
 
 import Database.DAOAdmin;
-import java.util.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import model.adminModel;
-import model.customerModel;
 import view.loginPage;
 
 /**
@@ -16,9 +17,32 @@ import view.loginPage;
  * @author A412FL
  */
 public class loginController {
+
     private loginPage LoginPageFrame;
-    private List<adminModel> listAdmin;
-    private List<customerModel> listCustomer;
     private DAOAdmin daoadmin;
+
+    public loginController(loginPage LoginPageFrame) {
+        this.LoginPageFrame = LoginPageFrame;
+        daoadmin = new DAOAdmin();
+    }
+
     
+
+    public void proses_login() {
+        String role = (String) LoginPageFrame.getRoleComboBox().getSelectedItem();
+        String username = LoginPageFrame.getUsernameLoginField().getText();
+        String password = LoginPageFrame.getPassword();
+        
+        if ("admin".equals(role)){
+            adminModel admin = daoadmin.getAdmin(username, password);
+            if (admin.getUsername().equals(username) && admin.getPassword().equals(password)) {
+                JOptionPane.showMessageDialog(null, "berhasil login");
+            } else {
+                JOptionPane.showMessageDialog(null, "username atau password salah");
+            }
+        } else if ("customer".equals(role)){
+                
+        }
+    }
+
 }

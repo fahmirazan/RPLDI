@@ -222,7 +222,7 @@ public class register_seller extends javax.swing.JFrame {
 
             // TODO add your handling code here:
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(registerPage.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_jButton1registerregisterActionPerformed

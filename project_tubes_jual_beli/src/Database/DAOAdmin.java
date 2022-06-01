@@ -5,6 +5,7 @@
  */
 package Database;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,7 +14,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.adminModel;
-import java.sql.Connection;
 
 /**
  *
@@ -23,7 +23,7 @@ public class DAOAdmin {
 
     private List<adminModel> listAdmin;
 
-    public List<adminModel> getAllAdmin() throws ClassNotFoundException {
+    public List<adminModel> getAllAdmin() {
         listAdmin = new ArrayList<>();
         try {
             ResultSet result;
@@ -44,4 +44,24 @@ public class DAOAdmin {
             return null;
         }
     }
+    
+    public adminModel getAdmin(String username, String password){
+        adminModel admin = new adminModel();
+        try {
+            ResultSet result;
+            try (Statement statement = DBConnect.getConnection().createStatement()) {
+                result = statement.executeQuery("SELECT * FROM sqladmin WHERE username = '"+username+"' and password = '"+ password+"'");
+                while (result.next()) {
+                    admin.setUsername(result.getString(1));
+                    admin.setPassword(result.getString(2));
+                }
+            }
+            result.close();
+            return admin;
+        } catch (SQLException ex) {
+            Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
 }
