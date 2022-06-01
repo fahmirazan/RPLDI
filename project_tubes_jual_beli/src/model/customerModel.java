@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author ASUS
@@ -15,6 +17,7 @@ public class customerModel {
     private String password;
     private String no_telepon;
     private String alamat;
+    private List<cartModel> listCart; 
 
     public String getUsername() {
         return username;
@@ -55,6 +58,13 @@ public class customerModel {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-    
+
+    public List<cartModel> getListCart() {
+        return listCart;
+    }
+
+    public void setListCart(List<cartModel> listCart) {
+        this.listCart = listCart;
+    }
     
 }

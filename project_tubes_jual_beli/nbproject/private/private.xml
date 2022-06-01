@@ -6,15 +6,10 @@
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/controller/loginController.java</file>
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/Database/DAOAdmin.java</file>
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/loginPage.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/Database/DBConnect.java</file>
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/model/customerModel.java</file>
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/tubes/Main.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/register.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/tubes/MainPage.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/register_seller.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/model/sellerModel.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/model/adminModel.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/Database/SQLUmum.java</file>
+            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/registerPage.java</file>
+            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/controller/registerController.java</file>
         </group>
     </open-files>
 </project-private>
