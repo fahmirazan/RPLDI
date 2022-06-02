@@ -185,7 +185,11 @@ public class loginPage extends javax.swing.JFrame {
 
     private void LoginButtonFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonFieldActionPerformed
         // TODO add your handling code here:
-        control.proses_login();
+        this.dispose();
+        MainPage obj = new MainPage();
+        obj.setVisible(true);
+        obj.setLocationRelativeTo(null);
+        obj.setResizable(false);
     }//GEN-LAST:event_LoginButtonFieldActionPerformed
 
     private void UsernameLoginFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameLoginFieldActionPerformed

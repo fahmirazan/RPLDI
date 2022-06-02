@@ -14,7 +14,7 @@ public class CartItem {
     private String productName;
     private int dblHarga;
     private int iQty;
-    private int dblTotalHarga;
+    private int subTotalHarga;
     
     public String getproductCode() {
         return productCode;
@@ -41,9 +41,9 @@ public class CartItem {
         iQty = qty;
     }
     public double getTotalHarga() {
-        return dblTotalHarga;
+        return subTotalHarga;
     }
     public void setTotalHarga(int dblTotalHarga) {
-        this.dblTotalHarga =  dblTotalHarga;
+        this.subTotalHarga =  dblTotalHarga;
     }
 }

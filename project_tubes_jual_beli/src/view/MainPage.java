@@ -145,7 +145,7 @@ public class MainPage extends javax.swing.JFrame {
         BackgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
         BackgroundPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 121, 107));
+        jPanel2.setBackground(new java.awt.Color(51, 153, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1199, 72));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
@@ -164,7 +164,7 @@ public class MainPage extends javax.swing.JFrame {
         jSeparator6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jSeparator6.setOpaque(true);
 
-        searchBar.setBackground(new java.awt.Color(0, 150, 136));
+        searchBar.setBackground(new java.awt.Color(51, 153, 255));
         searchBar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         searchBar.setForeground(new java.awt.Color(255, 255, 255));
         searchBar.setBorder(null);
@@ -179,7 +179,7 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        searchButton.setBackground(new java.awt.Color(0, 121, 107));
+        searchButton.setBackground(new java.awt.Color(51, 153, 255));
         searchButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Search_31px.png"))); // NOI18N
@@ -222,9 +222,9 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 349, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -247,18 +247,18 @@ public class MainPage extends javax.swing.JFrame {
                                 .addComponent(searchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel3))
                             .addGap(3, 3, 3))
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         BackgroundPanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 60));
 
-        jPanel3.setBackground(new java.awt.Color(0, 150, 136));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
-        newlyAdded.setBackground(new java.awt.Color(0, 150, 136));
+        newlyAdded.setBackground(new java.awt.Color(204, 204, 204));
         newlyAdded.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        newlyAdded.setForeground(new java.awt.Color(255, 255, 255));
+        newlyAdded.setForeground(new java.awt.Color(102, 102, 102));
         newlyAdded.setText("Newly Added");
         newlyAdded.setToolTipText("Check what's new!");
         newlyAdded.setBorderPainted(false);
@@ -288,9 +288,9 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        electronicsButton.setBackground(new java.awt.Color(0, 150, 136));
+        electronicsButton.setBackground(new java.awt.Color(204, 204, 204));
         electronicsButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        electronicsButton.setForeground(new java.awt.Color(255, 255, 255));
+        electronicsButton.setForeground(new java.awt.Color(102, 102, 102));
         electronicsButton.setText("Electronics");
         electronicsButton.setToolTipText("TV, Fridge, Electronic Devices");
         electronicsButton.setBorderPainted(false);
@@ -320,7 +320,7 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        accountButton.setBackground(new java.awt.Color(0, 150, 136));
+        accountButton.setBackground(new java.awt.Color(204, 204, 204));
         accountButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         accountButton.setForeground(new java.awt.Color(255, 255, 255));
         accountButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Person_48px.png"))); // NOI18N
@@ -352,9 +352,9 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        cartButton.setBackground(new java.awt.Color(0, 150, 136));
+        cartButton.setBackground(new java.awt.Color(204, 204, 204));
         cartButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        cartButton.setForeground(new java.awt.Color(255, 255, 255));
+        cartButton.setForeground(new java.awt.Color(102, 102, 102));
         cartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_OpenCart_24px.png"))); // NOI18N
         cartButton.setText("Cart");
         cartButton.setToolTipText("View your cart.");
@@ -387,9 +387,9 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        mobilesButton.setBackground(new java.awt.Color(0, 150, 136));
+        mobilesButton.setBackground(new java.awt.Color(204, 204, 204));
         mobilesButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        mobilesButton.setForeground(new java.awt.Color(255, 255, 255));
+        mobilesButton.setForeground(new java.awt.Color(102, 102, 102));
         mobilesButton.setText("Mobiles");
         mobilesButton.setToolTipText("Latest mobiles available on store!");
         mobilesButton.setBorderPainted(false);
@@ -419,9 +419,9 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        kidsButton.setBackground(new java.awt.Color(0, 150, 136));
+        kidsButton.setBackground(new java.awt.Color(204, 204, 204));
         kidsButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        kidsButton.setForeground(new java.awt.Color(255, 255, 255));
+        kidsButton.setForeground(new java.awt.Color(102, 102, 102));
         kidsButton.setText("Kids Corner");
         kidsButton.setToolTipText("Toys, Teddys and much more!");
         kidsButton.setBorderPainted(false);
@@ -464,9 +464,9 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(mobilesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(kidsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
-                .addComponent(cartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
+                .addComponent(cartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(accountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -477,7 +477,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(electronicsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(cartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(mobilesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(kidsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(kidsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(newlyAdded, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1301,7 +1301,11 @@ public class MainPage extends javax.swing.JFrame {
 
     private void accountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountButtonActionPerformed
         // TODO add your handling code here:
-        
+        this.dispose();
+        SignIn obj = new SignIn();
+        obj.setVisible(true);
+        obj.setLocationRelativeTo(null);
+        obj.setResizable(false);
     }//GEN-LAST:event_accountButtonActionPerformed
 
     private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
