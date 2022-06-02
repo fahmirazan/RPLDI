@@ -7,6 +7,8 @@ package tubes;
 
 import controller.loginController;
 import java.sql.SQLException;
+import javax.swing.JFrame;
+import view.MainPage;
 import view.loginPage;
 
 /**
@@ -24,10 +26,10 @@ public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         // TODO code application logic here
         //loginController controller = new loginController();
-        loginPage view = new loginPage();
-        view.setLocationRelativeTo(null);
-        view.setVisible(true);
-        view.setResizable(false);
+        JFrame newMain = new MainPage();
+        newMain.setTitle("E-Shoping");
+        newMain.setVisible(true);
+        newMain.setResizable(false);
         
     }
     

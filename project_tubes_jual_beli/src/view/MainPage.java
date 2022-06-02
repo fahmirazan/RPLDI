@@ -150,7 +150,7 @@ public class MainPage extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Black Bengal Shopping");
+        jLabel1.setText("E-Shoping");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -1643,7 +1643,7 @@ public class MainPage extends javax.swing.JFrame {
 //            }
 //        });
         JFrame newMain = new MainPage();
-        newMain.setTitle("Black Bengal Shopping");
+        newMain.setTitle("E-Shoping");
         newMain.setVisible(true);
         newMain.setResizable(false);
         
