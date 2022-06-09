@@ -9,7 +9,36 @@ package model;
  *
  * @author fahmi
  */
-public class CartItem {
+public class cartItemModel {
+    private int id;
+    private int jumlah;
+    private productModel product;
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getJumlah() {
+        return jumlah;
+    }
+
+    public void setJumlah(int jumlah) {
+        this.jumlah = jumlah;
+    }
+
+    public productModel getProduct() {
+        return product;
+    }
+
+    public void setProduct(productModel product) {
+        this.product = product;
+    }   
+    
+/*
     private String productCode;
     private String productName;
     private int dblHarga;
@@ -46,4 +75,5 @@ public class CartItem {
     public void setTotalHarga(int dblTotalHarga) {
         this.subTotalHarga =  dblTotalHarga;
     }
+*/
 }

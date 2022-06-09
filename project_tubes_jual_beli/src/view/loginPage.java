@@ -9,7 +9,6 @@ package view;
  *
  * @author ASUS
  */
-
 import controller.loginController;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -30,16 +29,30 @@ public class loginPage extends javax.swing.JFrame {
         control = new loginController(this);
     }
 
-    public JButton getLoginButtonField() {return LoginButtonField;}
-    public JPasswordField getPasswordLoginField() {return PasswordLoginField;}
-    public JComboBox<String> getRoleComboBox() {return RoleComboBox;}
-    public JTextField getUsernameLoginField() {return UsernameLoginField;}
-    public String getPassword(){
+    public JButton getLoginButtonField() {
+        return LoginButtonField;
+    }
+
+    public JPasswordField getPasswordLoginField() {
+        return PasswordLoginField;
+    }
+
+    public JComboBox<String> getRoleComboBox() {
+        return RoleComboBox;
+    }
+
+    public JTextField getUsernameLoginField() {
+        return UsernameLoginField;
+    }
+
+    public String getPassword() {
         return String.valueOf(getPasswordLoginField().getPassword());
     }
-    public void loginButtonActionListener(ActionListener listen){
+
+    public void loginButtonActionListener(ActionListener listen) {
         LoginButtonField.addActionListener(listen);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,7 +108,7 @@ public class loginPage extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Password");
 
-        RoleComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "costumer", "seller" }));
+        RoleComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "customer" }));
         RoleComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RoleComboBoxActionPerformed(evt);
@@ -184,12 +197,15 @@ public class loginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordLoginFieldActionPerformed
 
     private void LoginButtonFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonFieldActionPerformed
-        // TODO add your handling code here:
+        control.proses_login();
+        
+        /*
         this.dispose();
         MainPage obj = new MainPage();
         obj.setVisible(true);
         obj.setLocationRelativeTo(null);
         obj.setResizable(false);
+         */
     }//GEN-LAST:event_LoginButtonFieldActionPerformed
 
     private void UsernameLoginFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameLoginFieldActionPerformed

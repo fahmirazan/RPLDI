@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.customerPageController;
 import java.awt.Color;
 import java.awt.Image;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ import javax.swing.table.TableModel;
  */
 public class MainPage extends javax.swing.JFrame {
 
+    private customerPageController customerController;
     //Boolean isVisible = true;
     static Object[] data = new Object[4];   
     static int total = 0;
@@ -32,11 +34,7 @@ public class MainPage extends javax.swing.JFrame {
     
     public MainPage() {
         initComponents();
-        
-        //Adding last three entries from every categories in home
-        
-        
-        
+        customerController = new customerPageController(this);
     }
     
     public void doPanelHideShow()

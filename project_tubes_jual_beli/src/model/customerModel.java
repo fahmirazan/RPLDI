@@ -19,6 +19,14 @@ public class customerModel {
     private String alamat;
     private List<cartModel> listCart; 
 
+    public customerModel(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public customerModel() {
+    }
+
     public String getUsername() {
         return username;
     }

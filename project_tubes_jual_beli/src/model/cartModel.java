@@ -7,11 +7,67 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author A412FL
  */
 public class cartModel {
+
+    private int id;
+    private int total_harga;
+    private String pembayaran;
+    private String status_checkout;
+    private List<cartItemModel> listCartItem;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getTotal_harga() {
+        return total_harga;
+    }
+
+    public void setTotal_harga(int total_harga) {
+        this.total_harga = total_harga;
+    }
+
+    public String getPembayaran() {
+        return pembayaran;
+    }
+
+    public void setPembayaran(String pembayaran) {
+        this.pembayaran = pembayaran;
+    }
+
+    public String getStatus_checkout() {
+        return status_checkout;
+    }
+
+    public void setStatus_checkout(String status_checkout) {
+        this.status_checkout = status_checkout;
+    }
+
+    public List<cartItemModel> getListCartItem() {
+        return listCartItem;
+    }
+
+    public void setListCartItem(List<cartItemModel> listCartItem) {
+        this.listCartItem = listCartItem;
+    }
+
+    public void addCartItem(cartItemModel item) {
+        this.listCartItem.add(item);
+    }
+    
+    public int getItemCount(){
+        return listCartItem.size();
+    }
+    /*
     private final ArrayList alCartItem = new ArrayList();
     private List<CartItem>alCartItems;
     
@@ -49,4 +105,6 @@ public class cartModel {
     public void addCartItem(CartItem cart) {
          alCartItems.add(cart);
     }
+     */
+
 }

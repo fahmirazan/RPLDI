@@ -12,7 +12,6 @@ package model;
 public class adminModel {
     private String username;
     private String password;
-    private String foto;
 
     public adminModel(String username, String password, String foto) {
         this.username = username;
@@ -30,10 +29,6 @@ public class adminModel {
         return password;
     }
 
-    public String getFoto() {
-        return foto;
-    }
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -41,10 +36,5 @@ public class adminModel {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-    
     
 }

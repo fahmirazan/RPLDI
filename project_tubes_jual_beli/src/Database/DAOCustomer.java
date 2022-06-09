@@ -21,7 +21,7 @@ import model.customerModel;
 public class DAOCustomer {
     private List<customerModel> listCustomer;
 
-    public List<customerModel> getAllAdmin() {
+    public List<customerModel> getAllCustomer() {
         listCustomer = new ArrayList<>();
         try {
             ResultSet result;
@@ -48,10 +48,13 @@ public class DAOCustomer {
         try {
             ResultSet result;
             try (Statement statement = DBConnect.getConnection().createStatement()) {
-                result = statement.executeQuery("SELECT * FROM sqlcustomer WHERE username = '"+username+"' and password = '"+ password+"'");
+                result = statement.executeQuery("SELECT * FROM sqlcostumer WHERE username = '"+username+"' and password = '"+ password+"'");
                 while (result.next()) {
                     customer.setUsername(result.getString(1));
-                    customer.setPassword(result.getString(2));
+                    customer.setNama(result.getString(2));
+                    customer.setPassword(result.getString(3));
+                    customer.setNo_telepon(result.getString(4));
+                    customer.setAlamat(result.getString(5));
                 }
             }
             result.close();
