@@ -35,6 +35,14 @@ public class cartModel {
     public void setTotal_harga(int total_harga) {
         this.total_harga = total_harga;
     }
+    
+    public int hitungTotalHarga(){
+        int total = 0;
+        for(cartItemModel item : listCartItem){
+            total += item.getJumlah()*item.getProduct().getHarga();
+        }
+        return total;
+    }
 
     public String getPembayaran() {
         return pembayaran;

@@ -48,7 +48,7 @@ public class DAOCustomer {
         try {
             ResultSet result;
             try (Statement statement = DBConnect.getConnection().createStatement()) {
-                result = statement.executeQuery("SELECT * FROM sqlcostumer WHERE username = '"+username+"' and password = '"+ password+"'");
+                result = statement.executeQuery("SELECT * FROM sqlcustomer WHERE username = '"+username+"' and password = '"+ password+"'");
                 while (result.next()) {
                     customer.setUsername(result.getString(1));
                     customer.setNama(result.getString(2));

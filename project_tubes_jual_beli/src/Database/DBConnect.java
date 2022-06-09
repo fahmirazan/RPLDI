@@ -22,7 +22,7 @@ public class DBConnect {
         if (con == null) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rpldi", "root","");
+                con=DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrpldi", "root","");
                 System.out.println("Driver ditemukan");
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);

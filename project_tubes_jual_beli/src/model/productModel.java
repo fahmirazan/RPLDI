@@ -14,7 +14,7 @@ public class productModel {
     private String nama_barang;
     private int harga;
     private String variasi;
-    private String stok;
+    private int stok;
     private String deskripsi;
 
     public int getId() {
@@ -49,11 +49,11 @@ public class productModel {
         this.variasi = variasi;
     }
 
-    public String getStok() {
+    public int getStok() {
         return stok;
     }
 
-    public void setStok(String stok) {
+    public void setStok(int stok) {
         this.stok = stok;
     }
 
@@ -64,6 +64,6 @@ public class productModel {
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
     }
-    
+
     
 }

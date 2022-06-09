@@ -1216,22 +1216,22 @@ public class MainPage extends javax.swing.JFrame {
 
     private void newlyAddedMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMouseReleased
         // TODO add your handling code here:
-        newlyAdded.setBackground(new Color(0, 150, 136));
+        newlyAdded.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_newlyAddedMouseReleased
 
     private void newlyAddedMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMousePressed
         // TODO add your handling code here:
-        newlyAdded.setBackground(new Color(0, 77, 64));
+        newlyAdded.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_newlyAddedMousePressed
 
     private void newlyAddedMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMouseExited
         // TODO add your handling code here:
-        newlyAdded.setBackground(new Color(0, 150, 136));
+        newlyAdded.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_newlyAddedMouseExited
 
     private void newlyAddedMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMouseEntered
         // TODO add your handling code here:;
-        newlyAdded.setBackground(new Color(0, 137, 123));
+        newlyAdded.setBackground(new Color(204,204,204));
 
     }//GEN-LAST:event_newlyAddedMouseEntered
 
@@ -1249,22 +1249,22 @@ public class MainPage extends javax.swing.JFrame {
 
     private void electronicsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMouseEntered
         // TODO add your handling code here:
-         electronicsButton.setBackground(new Color(0, 137, 123));
+         electronicsButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_electronicsButtonMouseEntered
 
     private void electronicsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMouseExited
         // TODO add your handling code here:
-        electronicsButton.setBackground(new Color(0, 150, 136));
+        electronicsButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_electronicsButtonMouseExited
 
     private void electronicsButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMousePressed
         // TODO add your handling code here:
-        electronicsButton.setBackground(new Color(0, 77, 64));
+        electronicsButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_electronicsButtonMousePressed
 
     private void electronicsButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMouseReleased
         // TODO add your handling code here:
-         electronicsButton.setBackground(new Color(0, 150, 136));
+         electronicsButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_electronicsButtonMouseReleased
 
     private void electronicsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_electronicsButtonActionPerformed
@@ -1278,28 +1278,27 @@ public class MainPage extends javax.swing.JFrame {
 
     private void accountButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountButtonMouseEntered
         // TODO add your handling code here:
-        accountButton.setBackground(new Color(0, 137, 123));
+        accountButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_accountButtonMouseEntered
 
     private void accountButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountButtonMouseExited
         // TODO add your handling code here:
-        accountButton.setBackground(new Color(0, 150, 136));
+        accountButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_accountButtonMouseExited
 
     private void accountButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountButtonMousePressed
         // TODO add your handling code here:
-        accountButton.setBackground(new Color(0, 77, 64));
+        accountButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_accountButtonMousePressed
 
     private void accountButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountButtonMouseReleased
         // TODO add your handling code here:
-        accountButton.setBackground(new Color(0, 150, 136));
+        accountButton.setBackground(new Color(204,204,204));
 
     }//GEN-LAST:event_accountButtonMouseReleased
 
     private void accountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountButtonActionPerformed
         // TODO add your handling code here:
-        this.dispose();
         SignIn obj = new SignIn();
         obj.setVisible(true);
         obj.setLocationRelativeTo(null);
@@ -1321,22 +1320,22 @@ public class MainPage extends javax.swing.JFrame {
 
     private void cartButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartButtonMouseEntered
         // TODO add your handling code here:
-        cartButton.setBackground(new Color(0, 137, 123));
+        cartButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_cartButtonMouseEntered
 
     private void cartButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartButtonMouseExited
         // TODO add your handling code here:
-        cartButton.setBackground(new Color(0, 150, 136));
+        cartButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_cartButtonMouseExited
 
     private void cartButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartButtonMousePressed
         // TODO add your handling code here:
-        cartButton.setBackground(new Color(0, 77, 64));
+        cartButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_cartButtonMousePressed
 
     private void cartButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartButtonMouseReleased
         // TODO add your handling code here:
-        cartButton.setBackground(new Color(0, 150, 136));
+        cartButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_cartButtonMouseReleased
 
     private void mobilesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMouseClicked
@@ -1349,22 +1348,22 @@ public class MainPage extends javax.swing.JFrame {
 
     private void mobilesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMouseEntered
         // TODO add your handling code here:
-        mobilesButton.setBackground(new Color(0, 137, 123));
+        mobilesButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_mobilesButtonMouseEntered
 
     private void mobilesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMouseExited
         // TODO add your handling code here:
-        mobilesButton.setBackground(new Color(0, 150, 136));
+        mobilesButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_mobilesButtonMouseExited
 
     private void mobilesButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMousePressed
         // TODO add your handling code here:
-        mobilesButton.setBackground(new Color(0, 77, 64));
+        mobilesButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_mobilesButtonMousePressed
 
     private void mobilesButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMouseReleased
         // TODO add your handling code here:
-        mobilesButton.setBackground(new Color(0, 150, 136));
+        mobilesButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_mobilesButtonMouseReleased
 
     
@@ -1386,22 +1385,22 @@ public class MainPage extends javax.swing.JFrame {
 
     private void kidsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMouseEntered
         // TODO add your handling code here:
-        kidsButton.setBackground(new Color(0, 137, 123));
+        kidsButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_kidsButtonMouseEntered
 
     private void kidsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMouseExited
         // TODO add your handling code here:
-        kidsButton.setBackground(new Color(0, 150, 136));
+        kidsButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_kidsButtonMouseExited
 
     private void kidsButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMousePressed
         // TODO add your handling code here:
-        kidsButton.setBackground(new Color(0, 77, 64));
+        kidsButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_kidsButtonMousePressed
 
     private void kidsButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMouseReleased
         // TODO add your handling code here:
-        kidsButton.setBackground(new Color(0, 150, 136));
+        kidsButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_kidsButtonMouseReleased
 
     private void kidsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kidsButtonActionPerformed
@@ -1430,17 +1429,17 @@ public class MainPage extends javax.swing.JFrame {
 
     private void signUpButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpButtonMouseExited
         // TODO add your handling code here:
-        signUpButton.setForeground(new Color(0, 150, 136));
+        signUpButton.setForeground(new Color(204,204,204));
     }//GEN-LAST:event_signUpButtonMouseExited
 
     private void signUpButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpButtonMousePressed
         // TODO add your handling code here:
-        signUpButton.setForeground(new Color(0, 77, 64));
+        signUpButton.setForeground(new Color(204,204,204));
     }//GEN-LAST:event_signUpButtonMousePressed
 
     private void signUpButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpButtonMouseReleased
         // TODO add your handling code here:
-        signUpButton.setForeground(new Color(0, 150, 136));
+        signUpButton.setForeground(new Color(204,204,204));
     }//GEN-LAST:event_signUpButtonMouseReleased
 
     private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
@@ -1500,17 +1499,17 @@ public class MainPage extends javax.swing.JFrame {
 
     private void signInButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signInButtonMouseReleased
         // TODO add your handling code here:
-        signInButton.setForeground(new Color(0, 150, 136));
+        signInButton.setForeground(new Color(204,204,204));
     }//GEN-LAST:event_signInButtonMouseReleased
 
     private void signInButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signInButtonMousePressed
         // TODO add your handling code here:
-        signInButton.setForeground(new Color(0, 77, 64));
+        signInButton.setForeground(new Color(204,204,204));
     }//GEN-LAST:event_signInButtonMousePressed
 
     private void signInButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signInButtonMouseExited
         // TODO add your handling code here:
-        signInButton.setForeground(new Color(0, 150, 136));
+        signInButton.setForeground(new Color(204,204,204));
     }//GEN-LAST:event_signInButtonMouseExited
 
     private void signInButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signInButtonMouseEntered
@@ -1582,12 +1581,12 @@ public class MainPage extends javax.swing.JFrame {
 
     private void searchButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMousePressed
         // TODO add your handling code here:
-        searchButton.setBackground(new Color(0, 77, 64));
+        searchButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_searchButtonMousePressed
 
     private void searchButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseReleased
         // TODO add your handling code here:
-        searchButton.setBackground(new Color(0, 121, 107));
+        searchButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_searchButtonMouseReleased
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
