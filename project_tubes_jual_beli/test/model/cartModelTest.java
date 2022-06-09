@@ -7,10 +7,6 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -32,11 +28,10 @@ public class cartModelTest {
         cartItemModel item = new cartItemModel();
         item.setProduct(product);
         item.setJumlah(4);
-        List<cartItemModel> listCartItem;
-        listCartItem = new ArrayList<cartItemModel>();
+        List<cartItemModel> listCartItem = new ArrayList<cartItemModel>();
         listCartItem.add(item);
         instance.setListCartItem(listCartItem);
-        int expResult = 0;
+        int expResult = 4*50000;
         int result = instance.hitungTotalHarga();
         assertEquals(expResult, result);
     }
