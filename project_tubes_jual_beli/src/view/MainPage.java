@@ -11,12 +11,14 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import model.customerModel;
 
 /**
  *
@@ -24,6 +26,7 @@ import javax.swing.table.TableModel;
  */
 public class MainPage extends javax.swing.JFrame {
 
+    private customerModel customer;
     private customerPageController customerController;
     //Boolean isVisible = true;
     static Object[] data = new Object[4];   
@@ -32,9 +35,10 @@ public class MainPage extends javax.swing.JFrame {
     static boolean signInStatus = false;
     static int wrongPass = 0;
     
-    public MainPage() {
+    public MainPage(customerModel customer) {
         initComponents();
-        customerController = new customerPageController(this);
+        this.customer = customer;
+        customerController = new customerPageController(this, this.customer);
     }
     
     public void doPanelHideShow()
@@ -1299,10 +1303,11 @@ public class MainPage extends javax.swing.JFrame {
 
     private void accountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountButtonActionPerformed
         // TODO add your handling code here:
-        SignIn obj = new SignIn();
-        obj.setVisible(true);
-        obj.setLocationRelativeTo(null);
-        obj.setResizable(false);
+        customerController.tampilProfile();
+//        SignIn obj = new SignIn();
+//        obj.setVisible(true);
+//        obj.setLocationRelativeTo(null);
+//        obj.setResizable(false);
     }//GEN-LAST:event_accountButtonActionPerformed
 
     private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
@@ -1613,45 +1618,46 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new MainPage().setVisible(true);
+    
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
 //            }
-//        });
-        JFrame newMain = new MainPage();
-        newMain.setTitle("E-Shoping");
-        newMain.setVisible(true);
-        newMain.setResizable(false);
-        
-        
-        
-        
-    }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+////        java.awt.EventQueue.invokeLater(new Runnable() {
+////            public void run() {
+////                new MainPage().setVisible(true);
+////            }
+////        });
+//        JFrame newMain = new MainPage();
+//        newMain.setTitle("E-Shoping");
+//        newMain.setVisible(true);
+//        newMain.setResizable(false);
+//        
+//        
+//        
+//        
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BackgroundPanel;

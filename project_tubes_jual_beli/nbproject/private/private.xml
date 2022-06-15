@@ -3,19 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/model/cartItemModel.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/loginPage.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/model/customerModel.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/homepage.java</file>
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/controller/loginController.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/model/productModel.java</file>
+            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/controller/customerPageController.java</file>
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/tubes/Main.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/registerPage.java</file>
+            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/SignIn.java</file>
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/view/MainPage.java</file>
             <file>file:/D:/RPLDI/project_tubes_jual_beli/src/controller/registerController.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/model/adminModel.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/model/cartModel.java</file>
-            <file>file:/D:/RPLDI/project_tubes_jual_beli/src/Database/DAOCustomer.java</file>
         </group>
     </open-files>
 </project-private>

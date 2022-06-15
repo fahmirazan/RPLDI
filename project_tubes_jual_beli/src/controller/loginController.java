@@ -49,7 +49,7 @@ public class loginController {
             } else {
                 JOptionPane.showMessageDialog(null, "customer berhasil login");
                 LoginPageFrame.dispose();
-                customerPageFrame = new MainPage();
+                customerPageFrame = new MainPage(customer);
                 customerPageFrame.setLocationRelativeTo(null);
                 customerPageFrame.setVisible(true);
                 customerPageFrame.setResizable(false);

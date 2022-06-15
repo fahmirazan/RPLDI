@@ -21,9 +21,7 @@ public class SignIn extends javax.swing.JFrame {
         this.loggerName.setText(username);
     }
 
-    public SignIn() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -55,7 +53,7 @@ public class SignIn extends javax.swing.JFrame {
         loggerName.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         loggerName.setForeground(new java.awt.Color(0, 77, 64));
 
-        logOutButton.setBackground(new java.awt.Color(0, 77, 64));
+        logOutButton.setBackground(new java.awt.Color(204, 204, 204));
         logOutButton.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(255, 255, 255));
         logOutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Exit.png"))); // NOI18N
@@ -74,7 +72,7 @@ public class SignIn extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("You're signed in as:");
 
-        goBackButton.setBackground(new java.awt.Color(0, 77, 64));
+        goBackButton.setBackground(new java.awt.Color(204, 204, 204));
         goBackButton.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         goBackButton.setForeground(new java.awt.Color(255, 255, 255));
         goBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Go_Back_24px.png"))); // NOI18N
@@ -126,7 +124,7 @@ public class SignIn extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel7.setBackground(new java.awt.Color(0, 150, 136));
+        jPanel7.setBackground(new java.awt.Color(51, 153, 255));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N

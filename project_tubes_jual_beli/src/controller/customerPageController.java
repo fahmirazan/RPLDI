@@ -19,10 +19,19 @@ public class customerPageController {
     private SignIn profilePage;
     
     
+
     public customerPageController(MainPage customerPageFrame, customerModel customer) {
         this.customerPageFrame = customerPageFrame;
         this.customer = customer;
-        this.profilePage = new SignIn();
+        //this.profilePage = new SignIn(customer.getUsername());
+    }
+     
+    
+    public void tampilProfile(){
+        this.profilePage = new SignIn(customer.getUsername());
+        profilePage.setLocationRelativeTo(null);
+        profilePage.setVisible(true);
+        profilePage.setResizable(false);
     }
 
 
