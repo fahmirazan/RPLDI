@@ -5,7 +5,9 @@
  */
 package controller;
 
+import model.customerModel;
 import view.MainPage;
+import view.SignIn;
 
 /**
  *
@@ -13,10 +15,17 @@ import view.MainPage;
  */
 public class customerPageController {
     private MainPage customerPageFrame;
-
-    public customerPageController(MainPage customerPageFrame) {
+    private customerModel customer;
+    private SignIn profilePage;
+    
+    
+    public customerPageController(MainPage customerPageFrame, customerModel customer) {
         this.customerPageFrame = customerPageFrame;
+        this.customer = customer;
+        this.profilePage = new SignIn();
     }
-    
-    
+
+
+
+
 }

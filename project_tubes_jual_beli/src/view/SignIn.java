@@ -14,10 +14,15 @@ public class SignIn extends javax.swing.JFrame {
     /**
      * Creates new form SignedIn
      */
-    public SignIn() {
+    public SignIn(String username) {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        this.loggerName.setText(username);
+    }
+
+    public SignIn() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -189,7 +194,6 @@ public class SignIn extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
         MainPage.signInStatus = false;
-        ProductInformation.cartItem.clear();
         MainPage.logger = "";
     }//GEN-LAST:event_logOutButtonActionPerformed
 

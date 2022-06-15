@@ -44,15 +44,15 @@ public class loginController {
             }
         } else if ("customer".equals(role)) {
             customerModel customer = daocustomer.getCustomer(username, password);
-            if (customer.getUsername().equals(username) && customer.getPassword().equals(password)) {
-                // JOptionPane.showMessageDialog(null, "customer berhasil login");
+            if (!customer.getUsername().equals(username) && !customer.getPassword().equals(password)) {
+                JOptionPane.showMessageDialog(null, "username atau password salah");
+            } else {
+                JOptionPane.showMessageDialog(null, "customer berhasil login");
                 LoginPageFrame.dispose();
                 customerPageFrame = new MainPage();
                 customerPageFrame.setLocationRelativeTo(null);
                 customerPageFrame.setVisible(true);
                 customerPageFrame.setResizable(false);
-            } else {
-                JOptionPane.showMessageDialog(null, "username atau password salah");
             }
         }
     }

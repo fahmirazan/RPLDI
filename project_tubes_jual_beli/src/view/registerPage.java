@@ -242,7 +242,7 @@ public class registerPage extends javax.swing.JFrame {
         String adres = RegisterCustomerAlamatField.getText();
 
         PreparedStatement ps;
-        String query = "INSERT INTO `sqlcostumer`(`username`, `nama`, `password`, `no_telp`, `alamat`) VALUES (?,?,?,?,?)";
+        String query = "INSERT INTO `sqlcustomer`(`username`, `nama`, `password`, `no_telp`, `alamat`) VALUES (?,?,?,?,?)";
         try {
             ps = (PreparedStatement) DBConnect.getConnection().prepareStatement(query);
             ps.setString(1, uname);
