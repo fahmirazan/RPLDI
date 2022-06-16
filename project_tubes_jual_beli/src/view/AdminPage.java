@@ -15,8 +15,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -62,6 +64,26 @@ public class AdminPage extends javax.swing.JFrame {
         return variasiInputField;
     }
 
+    public JTable getProductTable() {
+        return productTable;
+    }
+
+    public JButton getDeleteEntry() {
+        return deleteEntry;
+    }
+
+    public JTextField getDeleteFieldbyID() {
+        return deleteFieldbyID;
+    }
+
+    public JTextField getStockUpdateQtyField() {
+        return stockUpdateQtyField;
+    }
+
+    public JTextField getStokUpdateIDField() {
+        return stokUpdateIDField;
+    }
+    
     
     
     /**
@@ -102,19 +124,17 @@ public class AdminPage extends javax.swing.JFrame {
         AddProductButton = new javax.swing.JButton();
         checkStockPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        checkStockTable = new javax.swing.JTable();
+        productTable = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        stockUpdateModel = new javax.swing.JTextField();
-        stockStatusCat = new javax.swing.JComboBox<>();
-        updateStockButton = new javax.swing.JButton();
-        delEntry = new javax.swing.JButton();
+        stokUpdateIDField = new javax.swing.JTextField();
+        updateStokButton = new javax.swing.JButton();
+        deleteEntry = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        delEntryModel = new javax.swing.JTextField();
-        delUpdateCat = new javax.swing.JComboBox<>();
+        deleteFieldbyID = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        stockUpdateSetQty = new javax.swing.JTextField();
+        stockUpdateQtyField = new javax.swing.JTextField();
         billingPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         billingTable = new javax.swing.JTable();
@@ -433,55 +453,52 @@ public class AdminPage extends javax.swing.JFrame {
 
         checkStockPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        checkStockTable.setModel(new javax.swing.table.DefaultTableModel(
+        productTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Brand Name", "Model", "Stock", "Category"
+                "ID", "Nama Barang", "Harga", "Variasi", "Stok"
             }
         ));
-        checkStockTable.setEnabled(false);
-        checkStockTable.setRowHeight(20);
-        jScrollPane3.setViewportView(checkStockTable);
+        productTable.setEnabled(false);
+        productTable.setRowHeight(20);
+        jScrollPane3.setViewportView(productTable);
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 77, 64));
-        jLabel10.setText("Enter model:");
+        jLabel10.setText("Enter lD:");
 
         jLabel11.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 77, 64));
         jLabel11.setText("Add to Stock:");
 
-        stockUpdateModel.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        stockUpdateModel.addActionListener(new java.awt.event.ActionListener() {
+        stokUpdateIDField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        stokUpdateIDField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stockUpdateModelActionPerformed(evt);
+                stokUpdateIDFieldActionPerformed(evt);
             }
         });
 
-        stockStatusCat.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        stockStatusCat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electronics", "Mobiles", "Kids" }));
-
-        updateStockButton.setBackground(new java.awt.Color(0, 77, 64));
-        updateStockButton.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        updateStockButton.setForeground(new java.awt.Color(255, 255, 255));
-        updateStockButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Up_24px.png"))); // NOI18N
-        updateStockButton.setText("Update Stock");
-        updateStockButton.addActionListener(new java.awt.event.ActionListener() {
+        updateStokButton.setBackground(new java.awt.Color(0, 77, 64));
+        updateStokButton.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        updateStokButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateStokButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Up_24px.png"))); // NOI18N
+        updateStokButton.setText("Update Stock");
+        updateStokButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateStockButtonActionPerformed(evt);
+                updateStokButtonActionPerformed(evt);
             }
         });
 
-        delEntry.setBackground(new java.awt.Color(255, 0, 0));
-        delEntry.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        delEntry.setForeground(new java.awt.Color(255, 255, 255));
-        delEntry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Delete_24px.png"))); // NOI18N
-        delEntry.setText("Delete Entry");
-        delEntry.addActionListener(new java.awt.event.ActionListener() {
+        deleteEntry.setBackground(new java.awt.Color(255, 0, 0));
+        deleteEntry.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        deleteEntry.setForeground(new java.awt.Color(255, 255, 255));
+        deleteEntry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Delete_24px.png"))); // NOI18N
+        deleteEntry.setText("Delete Entry");
+        deleteEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delEntryActionPerformed(evt);
+                deleteEntryActionPerformed(evt);
             }
         });
 
@@ -491,26 +508,23 @@ public class AdminPage extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel13.setText("Enter model:");
+        jLabel13.setText("Enter ID:");
 
-        delEntryModel.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        delEntryModel.addActionListener(new java.awt.event.ActionListener() {
+        deleteFieldbyID.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        deleteFieldbyID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delEntryModelActionPerformed(evt);
+                deleteFieldbyIDActionPerformed(evt);
             }
         });
-
-        delUpdateCat.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        delUpdateCat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electronics", "Mobiles", "Kids" }));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 77, 64));
         jLabel14.setText("Set Quantity:");
 
-        stockUpdateSetQty.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        stockUpdateSetQty.addActionListener(new java.awt.event.ActionListener() {
+        stockUpdateQtyField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        stockUpdateQtyField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stockUpdateSetQtyActionPerformed(evt);
+                stockUpdateQtyFieldActionPerformed(evt);
             }
         });
 
@@ -527,26 +541,25 @@ public class AdminPage extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(delEntryModel, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(delUpdateCat, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(delEntry, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(deleteFieldbyID, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(checkStockPanelLayout.createSequentialGroup()
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(stockUpdateModel, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(stockStatusCat, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(stokUpdateIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50)
+                .addGroup(checkStockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(checkStockPanelLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(deleteEntry, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(checkStockPanelLayout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(stockUpdateSetQty, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(stockUpdateQtyField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
-                .addComponent(updateStockButton)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addComponent(updateStokButton)
+                .addContainerGap(210, Short.MAX_VALUE))
         );
         checkStockPanelLayout.setVerticalGroup(
             checkStockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,24 +570,21 @@ public class AdminPage extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(checkStockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stockUpdateModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(stokUpdateIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkStockPanelLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(checkStockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(stockStatusCat, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stockUpdateSetQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(updateStockButton))))
+                            .addComponent(stockUpdateQtyField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateStokButton))))
                 .addGap(27, 27, 27)
                 .addGroup(checkStockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(checkStockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(delEntryModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(deleteFieldbyID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkStockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(delUpdateCat, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(delEntry)))
+                    .addComponent(deleteEntry, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(0, 36, Short.MAX_VALUE))
         );
 
@@ -693,49 +703,7 @@ public class AdminPage extends javax.swing.JFrame {
             cardAdminParentLayout.repaint();
             cardAdminParentLayout.revalidate();
             
-//            DefaultTableModel model =  (DefaultTableModel) checkStockTable.getModel();
-//            model.setRowCount(0);
-//         
-//            ArrayList<ProductList> list = ElectronicsDB.checkStock();
-//        
-//            Object data[] = new Object[4];
-//        
-//        for(int i=0; i<list.size(); i++){
-//            data[0] = list.get(i).getBrand();
-//            data[1] = list.get(i).getModel();
-//            data[2] = list.get(i).getQty();
-//            data[3] = "Electronics";
-//            
-//            model.addRow(data);
-//        }
-//        
-//        list.clear();
-//        
-//        list = MobileDB.checkStock();
-//        
-//        for(int i=0; i<list.size(); i++){
-//            data[0] = list.get(i).getBrand();
-//            data[1] = list.get(i).getModel();
-//            data[2] = list.get(i).getQty();
-//            data[3] = "Mobiles";
-//            
-//            model.addRow(data);
-//        }
-//        
-//        list.clear();
-//        
-//        list = KidsDB.checkStock();
-//        
-//        for(int i=0; i<list.size(); i++){
-//            data[0] = list.get(i).getBrand();
-//            data[1] = list.get(i).getModel();
-//            data[2] = list.get(i).getQty();
-//            data[3] = "Kids";
-//            
-//            model.addRow(data);
-//        }
-            
-            
+            controller.prosesTampilProduct();     
     }//GEN-LAST:event_checkStockButtonActionPerformed
 
     private void checkStockButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkStockButtonMouseReleased
@@ -833,107 +801,28 @@ public class AdminPage extends javax.swing.JFrame {
     }//GEN-LAST:event_hargaInputFieldActionPerformed
 
     private void AddProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProductButtonActionPerformed
-        // TODO add your handling code here:
         controller.prosesTambahProduct();
-//        try{
-//            if(mCat.getSelectedItem().equals("Mobile")){
-//            if(!path.equals(""))
-//                MobileDB.insertIntoMobileDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
-//                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
-//        }
-//        
-//        else if(mCat.getSelectedItem().equals("Electronics")){
-//            if(!path.equals(""))
-//                ElectronicsDB.insertIntoElectronicsDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
-//                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
-//        }
-//        else if(mCat.getSelectedItem().equals("Kids")){
-//            if(!path.equals(""))
-//                KidsDB.insertIntoKidsDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
-//                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
-//        }
-//        
-//        mBrand.setText("");
-//        mModel.setText("");
-//        mQty.setText("");
-//        mPrice.setText("");
-//        mDescription.setText("");
-//        mPhotoPath.setText("");
-//        }catch(Exception e){
-//            JOptionPane.showMessageDialog(null, e);
-//            mBrand.setText("");
-//            mModel.setText("");
-//            mQty.setText("");
-//            mPrice.setText("");
-//            mDescription.setText("");
-//            mPhotoPath.setText("");
-//        }
-
-
     }//GEN-LAST:event_AddProductButtonActionPerformed
 
-    private void stockUpdateModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockUpdateModelActionPerformed
+    private void stokUpdateIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stokUpdateIDFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_stockUpdateModelActionPerformed
+    }//GEN-LAST:event_stokUpdateIDFieldActionPerformed
 
-    private void delEntryModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEntryModelActionPerformed
+    private void deleteFieldbyIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteFieldbyIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_delEntryModelActionPerformed
+    }//GEN-LAST:event_deleteFieldbyIDActionPerformed
 
-    private void updateStockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStockButtonActionPerformed
-        // TODO add your handling code here:
-//       try{
-//            String model = stockUpdateModel.getText();
-//            int qty = Integer.parseInt(stockUpdateSetQty.getText());
-//
-//            if(stockStatusCat.getSelectedItem().equals("Electronics")){
-//                ElectronicsDB.flag = true;
-//                ElectronicsDB.updateElectronicsDB(model, qty);
-//            }
-//
-//            else if(stockStatusCat.getSelectedItem().equals("Mobiles")){
-//                MobileDB.flag = true;
-//                MobileDB.updateMobileDB(model, qty);
-//            }
-//
-//            else if(stockStatusCat.getSelectedItem().equals("Kids")){
-//                KidsDB.flag = true;
-//                KidsDB.updateKidsDB(model, qty);
-//            }
-//            
-//            stockUpdateModel.setText("");
-//            stockUpdateSetQty.setText("");
-//        
-//       }catch(Exception e){
-//           JOptionPane.showMessageDialog(null,e);
-//       }
-        
-   
-    }//GEN-LAST:event_updateStockButtonActionPerformed
+    private void updateStokButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStokButtonActionPerformed
+        controller.prosesUpdateStockProduct();
+    }//GEN-LAST:event_updateStokButtonActionPerformed
 
-    private void stockUpdateSetQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockUpdateSetQtyActionPerformed
+    private void stockUpdateQtyFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockUpdateQtyFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_stockUpdateSetQtyActionPerformed
+    }//GEN-LAST:event_stockUpdateQtyFieldActionPerformed
 
-    private void delEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEntryActionPerformed
-        // TODO add your handling code here:
-//        try{
-//            String del = delEntryModel.getText();
-//        
-//        if(delUpdateCat.getSelectedItem().equals("Electronics")){
-//            ElectronicsDB.delete(del);
-//        }
-//        else if(delUpdateCat.getSelectedItem().equals("Mobiles")){
-//            MobileDB.delete(del);
-//        }
-//        else if(delUpdateCat.getSelectedItem().equals("Kids")){
-//            KidsDB.delete(del);
-//        }
-//        delEntryModel.setText("");
-//        }catch(Exception e){
-//            JOptionPane.showMessageDialog(null, e);
-//        }
-    }//GEN-LAST:event_delEntryActionPerformed
+    private void deleteEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEntryActionPerformed
+        controller.prosesHapusProduct();
+    }//GEN-LAST:event_deleteEntryActionPerformed
 
     private void delEntry1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEntry1ActionPerformed
         // TODO add your handling code here:
@@ -954,11 +843,9 @@ public class AdminPage extends javax.swing.JFrame {
     private javax.swing.JPanel cardAdminParentLayout;
     private javax.swing.JButton checkStockButton;
     private javax.swing.JPanel checkStockPanel;
-    private javax.swing.JTable checkStockTable;
-    private javax.swing.JButton delEntry;
     private javax.swing.JButton delEntry1;
-    private javax.swing.JTextField delEntryModel;
-    private javax.swing.JComboBox<String> delUpdateCat;
+    private javax.swing.JButton deleteEntry;
+    private javax.swing.JTextField deleteFieldbyID;
     private javax.swing.JTextArea deskripsiInputField;
     private javax.swing.JTextField hargaInputField;
     private javax.swing.JLabel jLabel1;
@@ -983,14 +870,14 @@ public class AdminPage extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField mPhotoPath;
     private javax.swing.JTextField namaBarangInputField;
+    private javax.swing.JTable productTable;
     private javax.swing.JLabel selectedPhoto;
-    private javax.swing.JComboBox<String> stockStatusCat;
-    private javax.swing.JTextField stockUpdateModel;
-    private javax.swing.JTextField stockUpdateSetQty;
+    private javax.swing.JTextField stockUpdateQtyField;
     private javax.swing.JTextField stokInputField;
+    private javax.swing.JTextField stokUpdateIDField;
     private javax.swing.JButton updateButton;
     private javax.swing.JPanel updatePanel;
-    private javax.swing.JButton updateStockButton;
+    private javax.swing.JButton updateStokButton;
     private javax.swing.JTextField variasiInputField;
     // End of variables declaration//GEN-END:variables
 }

@@ -672,29 +672,31 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel13" min="-2" pref="117" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="delEntryModel" min="-2" pref="164" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="delUpdateCat" min="-2" pref="145" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="delEntry" min="-2" pref="171" max="-2" attributes="0"/>
+                                  <Component id="deleteFieldbyID" min="-2" pref="164" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel11" min="-2" pref="117" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel10" min="-2" pref="117" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="stockUpdateModel" min="-2" pref="164" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="stockStatusCat" min="-2" pref="145" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="stokUpdateIDField" min="-2" pref="164" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                                  <Component id="deleteEntry" min="-2" pref="171" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel14" min="-2" pref="117" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="stockUpdateSetQty" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="stockUpdateQtyField" min="-2" pref="164" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="updateStockButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="77" max="32767" attributes="0"/>
+                          <Component id="updateStokButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="210" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -707,17 +709,16 @@
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel10" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                      <Component id="stockUpdateModel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="stokUpdateIDField" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel11" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="stockStatusCat" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                       <Component id="jLabel14" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                      <Component id="stockUpdateSetQty" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="updateStockButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="stockUpdateQtyField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateStokButton" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -725,13 +726,10 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jLabel13" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="delEntryModel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deleteFieldbyID" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel12" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                  <Component id="delUpdateCat" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="delEntry" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="deleteEntry" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
                       </Group>
@@ -746,18 +744,24 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="checkStockTable">
+                    <Component class="javax.swing.JTable" name="productTable">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="0">
-                            <Column editable="true" title="Brand Name" type="java.lang.Object"/>
-                            <Column editable="true" title="Model" type="java.lang.Object"/>
-                            <Column editable="true" title="Stock" type="java.lang.Object"/>
-                            <Column editable="true" title="Category" type="java.lang.Object"/>
+                          <Table columnCount="5" rowCount="0">
+                            <Column editable="true" title="ID" type="java.lang.Object"/>
+                            <Column editable="true" title="Nama Barang" type="java.lang.Object"/>
+                            <Column editable="true" title="Harga" type="java.lang.Object"/>
+                            <Column editable="true" title="Variasi" type="java.lang.Object"/>
+                            <Column editable="true" title="Stok" type="java.lang.Object"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>
@@ -797,7 +801,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="40" green="4d" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Enter model:"/>
+                    <Property name="text" type="java.lang.String" value="Enter lD:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
@@ -811,34 +815,17 @@
                     <Property name="text" type="java.lang.String" value="Add to Stock:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="stockUpdateModel">
+                <Component class="javax.swing.JTextField" name="stokUpdateIDField">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto" size="18" style="0"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stockUpdateModelActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stokUpdateIDFieldActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="stockStatusCat">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Roboto" size="18" style="0"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="Electronics"/>
-                        <StringItem index="1" value="Mobiles"/>
-                        <StringItem index="2" value="Kids"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JButton" name="updateStockButton">
+                <Component class="javax.swing.JButton" name="updateStokButton">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="40" green="4d" red="0" type="rgb"/>
@@ -855,10 +842,10 @@
                     <Property name="text" type="java.lang.String" value="Update Stock"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateStockButtonActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateStokButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="delEntry">
+                <Component class="javax.swing.JButton" name="deleteEntry">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -875,7 +862,7 @@
                     <Property name="text" type="java.lang.String" value="Delete Entry"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delEntryActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteEntryActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">
@@ -897,35 +884,18 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Enter model:"/>
+                    <Property name="text" type="java.lang.String" value="Enter ID:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="delEntryModel">
+                <Component class="javax.swing.JTextField" name="deleteFieldbyID">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto" size="18" style="0"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delEntryModelActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteFieldbyIDActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="delUpdateCat">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Roboto" size="18" style="0"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="Electronics"/>
-                        <StringItem index="1" value="Mobiles"/>
-                        <StringItem index="2" value="Kids"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
@@ -938,14 +908,14 @@
                     <Property name="text" type="java.lang.String" value="Set Quantity:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="stockUpdateSetQty">
+                <Component class="javax.swing.JTextField" name="stockUpdateQtyField">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto" size="18" style="0"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stockUpdateSetQtyActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stockUpdateQtyFieldActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

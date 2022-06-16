@@ -25,6 +25,10 @@ public class productModel {
         this.deskripsi = deskripsi;
     }
 
+    public productModel() {
+        
+    }
+
     public int getId() {
         return id;
     }
