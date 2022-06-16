@@ -17,6 +17,14 @@ public class productModel {
     private int stok;
     private String deskripsi;
 
+    public productModel(String nama_barang, int harga, String variasi, int stok, String deskripsi) {
+        this.nama_barang = nama_barang;
+        this.harga = harga;
+        this.variasi = variasi;
+        this.stok = stok;
+        this.deskripsi = deskripsi;
+    }
+
     public int getId() {
         return id;
     }

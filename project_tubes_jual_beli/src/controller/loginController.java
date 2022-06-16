@@ -10,7 +10,7 @@ import Database.DAOCustomer;
 import javax.swing.JOptionPane;
 import model.adminModel;
 import model.customerModel;
-import view.AdminPanel;
+import view.AdminPage;
 import view.MainPage;
 import view.loginPage;
 
@@ -22,7 +22,7 @@ public class loginController {
 
     private loginPage LoginPageFrame;
     private MainPage customerPageFrame;
-    private AdminPanel adminPageFrame;
+    private AdminPage adminPageFrame;
     private DAOAdmin daoadmin;
     private DAOCustomer daocustomer;
 
@@ -41,7 +41,8 @@ public class loginController {
             adminModel admin = daoadmin.getAdmin(username, password);
             if (validateAdmin(admin)) {
                 JOptionPane.showMessageDialog(null, "admin berhasil login");
-                adminPageFrame = new AdminPanel();
+                LoginPageFrame.dispose();
+                adminPageFrame = new AdminPage();
                 adminPageFrame.setLocationRelativeTo(null);
                 adminPageFrame.setVisible(true);
                 adminPageFrame.setResizable(false);

@@ -51,7 +51,7 @@ public class SignIn extends javax.swing.JFrame {
 
         loggerName.setBackground(new java.awt.Color(255, 255, 255));
         loggerName.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        loggerName.setForeground(new java.awt.Color(0, 77, 64));
+        loggerName.setForeground(new java.awt.Color(51, 51, 51));
 
         logOutButton.setBackground(new java.awt.Color(204, 204, 204));
         logOutButton.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -68,7 +68,6 @@ public class SignIn extends javax.swing.JFrame {
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 77, 64));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("You're signed in as:");
 

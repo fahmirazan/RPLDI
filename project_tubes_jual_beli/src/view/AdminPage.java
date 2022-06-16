@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.adminPageController;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
@@ -16,6 +17,8 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 //import static view.MainPage.total;
 
@@ -23,20 +26,44 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Void
  */
-public class AdminPanel extends javax.swing.JFrame {
+public class AdminPage extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdminPanel
+     * Creates new form AdminPage
      */
+    private adminPageController controller;
     boolean imageChooser = false;
     String path;
     
-    public AdminPanel() {
+    public AdminPage() {
         initComponents();
+        this.controller = new adminPageController(this);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
     }
 
+    public JTextArea getDeskripsiInputField() {
+        return deskripsiInputField;
+    }
+
+    public JTextField getHargaInputField() {
+        return hargaInputField;
+    }
+
+    public JTextField getNamaBarangInputField() {
+        return namaBarangInputField;
+    }
+
+    public JTextField getStokInputField() {
+        return stokInputField;
+    }
+
+    public JTextField getVariasiInputField() {
+        return variasiInputField;
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,22 +86,20 @@ public class AdminPanel extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        mBrand = new javax.swing.JTextField();
-        mModel = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        mQty = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        mPhotoPath = new javax.swing.JTextField();
+        namaBarangInputField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        hargaInputField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        stokInputField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        variasiInputField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        mCat = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        mDescription = new javax.swing.JTextArea();
+        deskripsiInputField = new javax.swing.JTextArea();
         selectedPhoto = new javax.swing.JLabel();
-        photoSelection = new javax.swing.JButton();
-        mPrice = new javax.swing.JTextField();
-        LogInButton = new javax.swing.JButton();
+        mPhotoPath = new javax.swing.JTextField();
+        addPhoto = new javax.swing.JButton();
+        AddProductButton = new javax.swing.JButton();
         checkStockPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         checkStockTable = new javax.swing.JTable();
@@ -275,7 +300,7 @@ public class AdminPanel extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 77, 64));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Product Details");
+        jLabel3.setText("Tambah Product");
         updatePanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 24, 1200, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 77, 64));
@@ -283,52 +308,87 @@ public class AdminPanel extends javax.swing.JFrame {
         jSeparator1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jSeparator1.setOpaque(true);
         jSeparator1.setPreferredSize(new java.awt.Dimension(0, 1));
-        updatePanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 51, 200, -1));
+        updatePanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 51, 150, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 77, 64));
-        jLabel4.setText("Brand:");
+        jLabel4.setText("Nama Barang:");
         updatePanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 104, -1));
 
-        mBrand.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        mBrand.setForeground(new java.awt.Color(0, 77, 64));
-        mBrand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
-        mBrand.addActionListener(new java.awt.event.ActionListener() {
+        namaBarangInputField.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        namaBarangInputField.setForeground(new java.awt.Color(0, 77, 64));
+        namaBarangInputField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
+        namaBarangInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mBrandActionPerformed(evt);
+                namaBarangInputFieldActionPerformed(evt);
             }
         });
-        updatePanel.add(mBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 362, -1));
+        updatePanel.add(namaBarangInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 362, -1));
 
-        mModel.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        mModel.setForeground(new java.awt.Color(0, 77, 64));
-        mModel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
-        mModel.addActionListener(new java.awt.event.ActionListener() {
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 77, 64));
+        jLabel7.setText("Harga:");
+        updatePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 104, -1));
+
+        hargaInputField.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        hargaInputField.setForeground(new java.awt.Color(0, 77, 64));
+        hargaInputField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
+        hargaInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mModelActionPerformed(evt);
+                hargaInputFieldActionPerformed(evt);
             }
         });
-        updatePanel.add(mModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 362, -1));
+        updatePanel.add(hargaInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 180, -1));
 
-        jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 77, 64));
-        jLabel5.setText("Model:");
-        updatePanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 104, -1));
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 77, 64));
+        jLabel8.setText("Stok:");
+        updatePanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 104, -1));
 
-        mQty.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        mQty.setForeground(new java.awt.Color(0, 77, 64));
-        mQty.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
-        mQty.addActionListener(new java.awt.event.ActionListener() {
+        stokInputField.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        stokInputField.setForeground(new java.awt.Color(0, 77, 64));
+        stokInputField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
+        stokInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mQtyActionPerformed(evt);
+                stokInputFieldActionPerformed(evt);
             }
         });
-        updatePanel.add(mQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 110, -1));
+        updatePanel.add(stokInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 110, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 77, 64));
-        jLabel6.setText("Category:");
-        updatePanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 104, -1));
+        jLabel6.setText("Variasi:");
+        updatePanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 104, -1));
+
+        variasiInputField.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        variasiInputField.setForeground(new java.awt.Color(0, 77, 64));
+        variasiInputField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
+        variasiInputField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                variasiInputFieldActionPerformed(evt);
+            }
+        });
+        updatePanel.add(variasiInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 110, -1));
+
+        jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 77, 64));
+        jLabel9.setText("Deskripsi");
+        updatePanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 140, -1));
+
+        deskripsiInputField.setColumns(20);
+        deskripsiInputField.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        deskripsiInputField.setLineWrap(true);
+        deskripsiInputField.setRows(5);
+        deskripsiInputField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 77, 64), 1, true));
+        jScrollPane1.setViewportView(deskripsiInputField);
+
+        updatePanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 370, 190));
+
+        selectedPhoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        selectedPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Add_Image_100px.png"))); // NOI18N
+        selectedPhoto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 77, 64), 1, true));
+        selectedPhoto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        updatePanel.add(selectedPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, 230, 210));
 
         mPhotoPath.setEditable(false);
         mPhotoPath.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -342,76 +402,32 @@ public class AdminPanel extends javax.swing.JFrame {
         });
         updatePanel.add(mPhotoPath, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 340, 210, 30));
 
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 77, 64));
-        jLabel7.setText("Price:");
-        updatePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 104, -1));
-
-        jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 77, 64));
-        jLabel8.setText("Quantity:");
-        updatePanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 104, -1));
-
-        jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 77, 64));
-        jLabel9.setText("Product Description:");
-        updatePanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 140, -1));
-
-        mCat.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        mCat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electronics", "Mobile", "Kids" }));
-        updatePanel.add(mCat, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
-
-        mDescription.setColumns(20);
-        mDescription.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        mDescription.setLineWrap(true);
-        mDescription.setRows(5);
-        mDescription.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 77, 64), 1, true));
-        jScrollPane1.setViewportView(mDescription);
-
-        updatePanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 370, 190));
-
-        selectedPhoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        selectedPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Add_Image_100px.png"))); // NOI18N
-        selectedPhoto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 77, 64), 1, true));
-        selectedPhoto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        updatePanel.add(selectedPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, 230, 210));
-
-        photoSelection.setBackground(new java.awt.Color(0, 77, 64));
-        photoSelection.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        photoSelection.setForeground(new java.awt.Color(255, 255, 255));
-        photoSelection.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Add_Camera_20px.png"))); // NOI18N
-        photoSelection.setBorder(null);
-        photoSelection.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        photoSelection.addActionListener(new java.awt.event.ActionListener() {
+        addPhoto.setBackground(new java.awt.Color(0, 77, 64));
+        addPhoto.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        addPhoto.setForeground(new java.awt.Color(255, 255, 255));
+        addPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Add_Camera_20px.png"))); // NOI18N
+        addPhoto.setBorder(null);
+        addPhoto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addPhoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                photoSelectionActionPerformed(evt);
+                addPhotoActionPerformed(evt);
             }
         });
-        updatePanel.add(photoSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 340, 50, 30));
+        updatePanel.add(addPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 340, 50, 30));
 
-        mPrice.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        mPrice.setForeground(new java.awt.Color(0, 77, 64));
-        mPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
-        mPrice.addActionListener(new java.awt.event.ActionListener() {
+        AddProductButton.setBackground(new java.awt.Color(0, 77, 64));
+        AddProductButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        AddProductButton.setForeground(new java.awt.Color(255, 255, 255));
+        AddProductButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Add_Database_24px.png"))); // NOI18N
+        AddProductButton.setText("Add");
+        AddProductButton.setBorder(null);
+        AddProductButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AddProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mPriceActionPerformed(evt);
+                AddProductButtonActionPerformed(evt);
             }
         });
-        updatePanel.add(mPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 180, -1));
-
-        LogInButton.setBackground(new java.awt.Color(0, 77, 64));
-        LogInButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        LogInButton.setForeground(new java.awt.Color(255, 255, 255));
-        LogInButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Add_Database_24px.png"))); // NOI18N
-        LogInButton.setText("Update");
-        LogInButton.setBorder(null);
-        LogInButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LogInButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogInButtonActionPerformed(evt);
-            }
-        });
-        updatePanel.add(LogInButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 460, 130, 50));
+        updatePanel.add(AddProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 460, 130, 50));
 
         cardAdminParentLayout.add(updatePanel, "card3");
 
@@ -781,23 +797,19 @@ public class AdminPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void mBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mBrandActionPerformed
+    private void namaBarangInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaBarangInputFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mBrandActionPerformed
+    }//GEN-LAST:event_namaBarangInputFieldActionPerformed
 
-    private void mModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mModelActionPerformed
+    private void stokInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stokInputFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mModelActionPerformed
-
-    private void mQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mQtyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mQtyActionPerformed
+    }//GEN-LAST:event_stokInputFieldActionPerformed
 
     private void mPhotoPathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mPhotoPathActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mPhotoPathActionPerformed
 
-    private void photoSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_photoSelectionActionPerformed
+    private void addPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPhotoActionPerformed
         // TODO add your handling code here:
         JFileChooser fc = new JFileChooser();
         fc.showOpenDialog(this);
@@ -810,18 +822,19 @@ public class AdminPanel extends javax.swing.JFrame {
             selectedPhoto.setIcon(new ImageIcon(img.getScaledInstance(selectedPhoto.getWidth(),
                     selectedPhoto.getHeight(), Image.SCALE_SMOOTH)));
         } catch (IOException ex) {
-            Logger.getLogger(AdminPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminPage.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
-    }//GEN-LAST:event_photoSelectionActionPerformed
+    }//GEN-LAST:event_addPhotoActionPerformed
 
-    private void mPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mPriceActionPerformed
+    private void hargaInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hargaInputFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mPriceActionPerformed
+    }//GEN-LAST:event_hargaInputFieldActionPerformed
 
-    private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
+    private void AddProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProductButtonActionPerformed
         // TODO add your handling code here:
+        controller.prosesTambahProduct();
 //        try{
 //            if(mCat.getSelectedItem().equals("Mobile")){
 //            if(!path.equals(""))
@@ -857,7 +870,7 @@ public class AdminPanel extends javax.swing.JFrame {
 //        }
 
 
-    }//GEN-LAST:event_LogInButtonActionPerformed
+    }//GEN-LAST:event_AddProductButtonActionPerformed
 
     private void stockUpdateModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockUpdateModelActionPerformed
         // TODO add your handling code here:
@@ -927,9 +940,14 @@ public class AdminPanel extends javax.swing.JFrame {
 //        BillingDB.deleteBillings();
     }//GEN-LAST:event_delEntry1ActionPerformed
 
+    private void variasiInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_variasiInputFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_variasiInputFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton LogInButton;
+    private javax.swing.JButton AddProductButton;
+    private javax.swing.JButton addPhoto;
     private javax.swing.JButton billingButton;
     private javax.swing.JPanel billingPanel;
     private javax.swing.JTable billingTable;
@@ -941,6 +959,8 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JButton delEntry1;
     private javax.swing.JTextField delEntryModel;
     private javax.swing.JComboBox<String> delUpdateCat;
+    private javax.swing.JTextArea deskripsiInputField;
+    private javax.swing.JTextField hargaInputField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -950,7 +970,6 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -962,20 +981,16 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField mBrand;
-    private javax.swing.JComboBox<String> mCat;
-    private javax.swing.JTextArea mDescription;
-    private javax.swing.JTextField mModel;
     private javax.swing.JTextField mPhotoPath;
-    private javax.swing.JTextField mPrice;
-    private javax.swing.JTextField mQty;
-    private javax.swing.JButton photoSelection;
+    private javax.swing.JTextField namaBarangInputField;
     private javax.swing.JLabel selectedPhoto;
     private javax.swing.JComboBox<String> stockStatusCat;
     private javax.swing.JTextField stockUpdateModel;
     private javax.swing.JTextField stockUpdateSetQty;
+    private javax.swing.JTextField stokInputField;
     private javax.swing.JButton updateButton;
     private javax.swing.JPanel updatePanel;
     private javax.swing.JButton updateStockButton;
+    private javax.swing.JTextField variasiInputField;
     // End of variables declaration//GEN-END:variables
 }
