@@ -10,6 +10,7 @@ import Database.DAOCustomer;
 import javax.swing.JOptionPane;
 import model.adminModel;
 import model.customerModel;
+import view.AdminPanel;
 import view.MainPage;
 import view.loginPage;
 
@@ -21,6 +22,7 @@ public class loginController {
 
     private loginPage LoginPageFrame;
     private MainPage customerPageFrame;
+    private AdminPanel adminPageFrame;
     private DAOAdmin daoadmin;
     private DAOCustomer daocustomer;
 
@@ -37,32 +39,35 @@ public class loginController {
 
         if ("admin".equals(role)) {
             adminModel admin = daoadmin.getAdmin(username, password);
-            if (validateAdmin(admin, username, password)) {
+            if (validateAdmin(admin)) {
                 JOptionPane.showMessageDialog(null, "admin berhasil login");
+                adminPageFrame = new AdminPanel();
+                adminPageFrame.setLocationRelativeTo(null);
+                adminPageFrame.setVisible(true);
+                adminPageFrame.setResizable(false);
             } else {
                 JOptionPane.showMessageDialog(null, "username atau password salah");
             }
         } else if ("customer".equals(role)) {
             customerModel customer = daocustomer.getCustomer(username, password);
-            if (!customer.getUsername().equals(username) && !customer.getPassword().equals(password)) {
-                JOptionPane.showMessageDialog(null, "username atau password salah");
-            } else {
+            if (validateCustomer(customer)) {
                 JOptionPane.showMessageDialog(null, "customer berhasil login");
                 LoginPageFrame.dispose();
                 customerPageFrame = new MainPage(customer);
                 customerPageFrame.setLocationRelativeTo(null);
                 customerPageFrame.setVisible(true);
                 customerPageFrame.setResizable(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "username atau password salah");
             }
         }
     }
 
-    public boolean validateAdmin(adminModel admin, String username, String password) {
-        // return admin.getUsername() != null && admin.getUsername().equals(username) && admin.getPassword().equals(password);
+    public boolean validateAdmin(adminModel admin) {
         return admin.getUsername() != null;
     }
 
-    public boolean validateCustomer(customerModel customer, String username, String password) {
+    public boolean validateCustomer(customerModel customer) {
         return customer.getUsername() != null;
     }
 }

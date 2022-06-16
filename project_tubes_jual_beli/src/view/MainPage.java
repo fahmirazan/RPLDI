@@ -26,29 +26,14 @@ import model.customerModel;
  */
 public class MainPage extends javax.swing.JFrame {
 
-    private customerModel customer;
     private customerPageController customerController;
-    //Boolean isVisible = true;
-    static Object[] data = new Object[4];   
-    static int total = 0;
-    static String tot = "";
-    static boolean signInStatus = false;
-    static int wrongPass = 0;
     
     public MainPage(customerModel customer) {
         initComponents();
-        this.customer = customer;
-        customerController = new customerPageController(this, this.customer);
+        this.setTitle("E-Shoping");
+        customerController = new customerPageController(this, customer);
     }
     
-    public void doPanelHideShow()
-    {
-       
-            
-        
-        
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -251,7 +236,7 @@ public class MainPage extends javax.swing.JFrame {
                             .addGap(3, 3, 3))
                         .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         BackgroundPanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 60));
@@ -961,11 +946,6 @@ public class MainPage extends javax.swing.JFrame {
         showPassword.setBorderPaintedFlat(true);
         showPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showPassword.setPreferredSize(new java.awt.Dimension(30, 30));
-        showPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showPasswordActionPerformed(evt);
-            }
-        });
         jPanel4.add(showPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 20, 20));
 
         LogUpButton.setBackground(new java.awt.Color(0, 77, 64));
@@ -1483,15 +1463,6 @@ public class MainPage extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_LogUpButtonActionPerformed
-
-    private void showPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPasswordActionPerformed
-        // TODO add your handling code here:
-        if(showPassword.isSelected()){
-            signUpPasswordField.setEchoChar((char)0);
-        }
-        else
-        signUpPasswordField.setEchoChar('*');
-    }//GEN-LAST:event_showPasswordActionPerformed
 
     private void signInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInButtonActionPerformed
         // TODO add your handling code here:

@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import static view.MainPage.total;
+//import static view.MainPage.total;
 
 /**
  *
@@ -102,7 +102,7 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(1199, 699));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 121, 107));
+        jPanel2.setBackground(new java.awt.Color(51, 153, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1200, 72));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
@@ -132,16 +132,16 @@ public class AdminPanel extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 60));
 
-        jPanel4.setBackground(new java.awt.Color(0, 150, 136));
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
-        updateButton.setBackground(new java.awt.Color(0, 150, 136));
+        updateButton.setBackground(new java.awt.Color(204, 204, 204));
         updateButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         updateButton.setForeground(new java.awt.Color(255, 255, 255));
         updateButton.setText("New Entry");
@@ -174,7 +174,7 @@ public class AdminPanel extends javax.swing.JFrame {
             }
         });
 
-        checkStockButton.setBackground(new java.awt.Color(0, 150, 136));
+        checkStockButton.setBackground(new java.awt.Color(204, 204, 204));
         checkStockButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         checkStockButton.setForeground(new java.awt.Color(255, 255, 255));
         checkStockButton.setText("Check Stock");
@@ -207,7 +207,7 @@ public class AdminPanel extends javax.swing.JFrame {
             }
         });
 
-        billingButton.setBackground(new java.awt.Color(0, 150, 136));
+        billingButton.setBackground(new java.awt.Color(204, 204, 204));
         billingButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         billingButton.setForeground(new java.awt.Color(255, 255, 255));
         billingButton.setText("Billing");
@@ -629,22 +629,22 @@ public class AdminPanel extends javax.swing.JFrame {
             cardAdminParentLayout.repaint();
             cardAdminParentLayout.revalidate();
             
-            DefaultTableModel model =  (DefaultTableModel) billingTable.getModel();
-            model.setRowCount(0);
-         
-            Object[] data = new Object[4];
-            ArrayList<BillObject> list = new ArrayList<>();
-            list = BillingDB.billlings();
-        
-        for(int i=0; i<list.size(); i++){
-            data[0] = i+1;
-            data[1] = list.get(i).getUname();
-            data[2] = list.get(i).getBill();
-            data[3] = list.get(i).getDate();
-            
-            model.addRow(data);
-            billingTable.setRowHeight(20);
-        }
+//            DefaultTableModel model =  (DefaultTableModel) billingTable.getModel();
+//            model.setRowCount(0);
+//         
+//            Object[] data = new Object[4];
+//            ArrayList<BillObject> list = new ArrayList<>();
+//            list = BillingDB.billlings();
+//        
+//        for(int i=0; i<list.size(); i++){
+//            data[0] = i+1;
+//            data[1] = list.get(i).getUname();
+//            data[2] = list.get(i).getBill();
+//            data[3] = list.get(i).getDate();
+//            
+//            model.addRow(data);
+//            billingTable.setRowHeight(20);
+//        }
     }//GEN-LAST:event_billingButtonActionPerformed
 
     private void billingButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_billingButtonMouseReleased
@@ -677,47 +677,47 @@ public class AdminPanel extends javax.swing.JFrame {
             cardAdminParentLayout.repaint();
             cardAdminParentLayout.revalidate();
             
-            DefaultTableModel model =  (DefaultTableModel) checkStockTable.getModel();
-            model.setRowCount(0);
-         
-            ArrayList<ProductList> list = ElectronicsDB.checkStock();
-        
-            Object data[] = new Object[4];
-        
-        for(int i=0; i<list.size(); i++){
-            data[0] = list.get(i).getBrand();
-            data[1] = list.get(i).getModel();
-            data[2] = list.get(i).getQty();
-            data[3] = "Electronics";
-            
-            model.addRow(data);
-        }
-        
-        list.clear();
-        
-        list = MobileDB.checkStock();
-        
-        for(int i=0; i<list.size(); i++){
-            data[0] = list.get(i).getBrand();
-            data[1] = list.get(i).getModel();
-            data[2] = list.get(i).getQty();
-            data[3] = "Mobiles";
-            
-            model.addRow(data);
-        }
-        
-        list.clear();
-        
-        list = KidsDB.checkStock();
-        
-        for(int i=0; i<list.size(); i++){
-            data[0] = list.get(i).getBrand();
-            data[1] = list.get(i).getModel();
-            data[2] = list.get(i).getQty();
-            data[3] = "Kids";
-            
-            model.addRow(data);
-        }
+//            DefaultTableModel model =  (DefaultTableModel) checkStockTable.getModel();
+//            model.setRowCount(0);
+//         
+//            ArrayList<ProductList> list = ElectronicsDB.checkStock();
+//        
+//            Object data[] = new Object[4];
+//        
+//        for(int i=0; i<list.size(); i++){
+//            data[0] = list.get(i).getBrand();
+//            data[1] = list.get(i).getModel();
+//            data[2] = list.get(i).getQty();
+//            data[3] = "Electronics";
+//            
+//            model.addRow(data);
+//        }
+//        
+//        list.clear();
+//        
+//        list = MobileDB.checkStock();
+//        
+//        for(int i=0; i<list.size(); i++){
+//            data[0] = list.get(i).getBrand();
+//            data[1] = list.get(i).getModel();
+//            data[2] = list.get(i).getQty();
+//            data[3] = "Mobiles";
+//            
+//            model.addRow(data);
+//        }
+//        
+//        list.clear();
+//        
+//        list = KidsDB.checkStock();
+//        
+//        for(int i=0; i<list.size(); i++){
+//            data[0] = list.get(i).getBrand();
+//            data[1] = list.get(i).getModel();
+//            data[2] = list.get(i).getQty();
+//            data[3] = "Kids";
+//            
+//            model.addRow(data);
+//        }
             
             
     }//GEN-LAST:event_checkStockButtonActionPerformed
@@ -822,39 +822,39 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
         // TODO add your handling code here:
-        try{
-            if(mCat.getSelectedItem().equals("Mobile")){
-            if(!path.equals(""))
-                MobileDB.insertIntoMobileDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
-                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
-        }
-        
-        else if(mCat.getSelectedItem().equals("Electronics")){
-            if(!path.equals(""))
-                ElectronicsDB.insertIntoElectronicsDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
-                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
-        }
-        else if(mCat.getSelectedItem().equals("Kids")){
-            if(!path.equals(""))
-                KidsDB.insertIntoKidsDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
-                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
-        }
-        
-        mBrand.setText("");
-        mModel.setText("");
-        mQty.setText("");
-        mPrice.setText("");
-        mDescription.setText("");
-        mPhotoPath.setText("");
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-            mBrand.setText("");
-            mModel.setText("");
-            mQty.setText("");
-            mPrice.setText("");
-            mDescription.setText("");
-            mPhotoPath.setText("");
-        }
+//        try{
+//            if(mCat.getSelectedItem().equals("Mobile")){
+//            if(!path.equals(""))
+//                MobileDB.insertIntoMobileDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
+//                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
+//        }
+//        
+//        else if(mCat.getSelectedItem().equals("Electronics")){
+//            if(!path.equals(""))
+//                ElectronicsDB.insertIntoElectronicsDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
+//                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
+//        }
+//        else if(mCat.getSelectedItem().equals("Kids")){
+//            if(!path.equals(""))
+//                KidsDB.insertIntoKidsDB(mBrand.getText(), mModel.getText(), Integer.parseInt(mPrice.getText()), 
+//                        Integer.parseInt(mQty.getText()), mDescription.getText(), path);
+//        }
+//        
+//        mBrand.setText("");
+//        mModel.setText("");
+//        mQty.setText("");
+//        mPrice.setText("");
+//        mDescription.setText("");
+//        mPhotoPath.setText("");
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//            mBrand.setText("");
+//            mModel.setText("");
+//            mQty.setText("");
+//            mPrice.setText("");
+//            mDescription.setText("");
+//            mPhotoPath.setText("");
+//        }
 
 
     }//GEN-LAST:event_LogInButtonActionPerformed
@@ -869,31 +869,31 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void updateStockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStockButtonActionPerformed
         // TODO add your handling code here:
-       try{
-            String model = stockUpdateModel.getText();
-            int qty = Integer.parseInt(stockUpdateSetQty.getText());
-
-            if(stockStatusCat.getSelectedItem().equals("Electronics")){
-                ElectronicsDB.flag = true;
-                ElectronicsDB.updateElectronicsDB(model, qty);
-            }
-
-            else if(stockStatusCat.getSelectedItem().equals("Mobiles")){
-                MobileDB.flag = true;
-                MobileDB.updateMobileDB(model, qty);
-            }
-
-            else if(stockStatusCat.getSelectedItem().equals("Kids")){
-                KidsDB.flag = true;
-                KidsDB.updateKidsDB(model, qty);
-            }
-            
-            stockUpdateModel.setText("");
-            stockUpdateSetQty.setText("");
-        
-       }catch(Exception e){
-           JOptionPane.showMessageDialog(null,e);
-       }
+//       try{
+//            String model = stockUpdateModel.getText();
+//            int qty = Integer.parseInt(stockUpdateSetQty.getText());
+//
+//            if(stockStatusCat.getSelectedItem().equals("Electronics")){
+//                ElectronicsDB.flag = true;
+//                ElectronicsDB.updateElectronicsDB(model, qty);
+//            }
+//
+//            else if(stockStatusCat.getSelectedItem().equals("Mobiles")){
+//                MobileDB.flag = true;
+//                MobileDB.updateMobileDB(model, qty);
+//            }
+//
+//            else if(stockStatusCat.getSelectedItem().equals("Kids")){
+//                KidsDB.flag = true;
+//                KidsDB.updateKidsDB(model, qty);
+//            }
+//            
+//            stockUpdateModel.setText("");
+//            stockUpdateSetQty.setText("");
+//        
+//       }catch(Exception e){
+//           JOptionPane.showMessageDialog(null,e);
+//       }
         
    
     }//GEN-LAST:event_updateStockButtonActionPerformed
@@ -904,27 +904,27 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void delEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEntryActionPerformed
         // TODO add your handling code here:
-        try{
-            String del = delEntryModel.getText();
-        
-        if(delUpdateCat.getSelectedItem().equals("Electronics")){
-            ElectronicsDB.delete(del);
-        }
-        else if(delUpdateCat.getSelectedItem().equals("Mobiles")){
-            MobileDB.delete(del);
-        }
-        else if(delUpdateCat.getSelectedItem().equals("Kids")){
-            KidsDB.delete(del);
-        }
-        delEntryModel.setText("");
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        try{
+//            String del = delEntryModel.getText();
+//        
+//        if(delUpdateCat.getSelectedItem().equals("Electronics")){
+//            ElectronicsDB.delete(del);
+//        }
+//        else if(delUpdateCat.getSelectedItem().equals("Mobiles")){
+//            MobileDB.delete(del);
+//        }
+//        else if(delUpdateCat.getSelectedItem().equals("Kids")){
+//            KidsDB.delete(del);
+//        }
+//        delEntryModel.setText("");
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//        }
     }//GEN-LAST:event_delEntryActionPerformed
 
     private void delEntry1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEntry1ActionPerformed
         // TODO add your handling code here:
-        BillingDB.deleteBillings();
+//        BillingDB.deleteBillings();
     }//GEN-LAST:event_delEntry1ActionPerformed
 
 

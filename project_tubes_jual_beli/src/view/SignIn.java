@@ -191,7 +191,6 @@ public class SignIn extends javax.swing.JFrame {
     private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        MainPage.signInStatus = false;
         MainPage.logger = "";
     }//GEN-LAST:event_logOutButtonActionPerformed
 
