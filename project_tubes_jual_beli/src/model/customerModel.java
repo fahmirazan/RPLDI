@@ -24,6 +24,14 @@ public class customerModel {
         this.password = password;
     }
 
+    public customerModel(String username, String nama, String password, String no_telepon, String alamat) {
+        this.username = username;
+        this.nama = nama;
+        this.password = password;
+        this.no_telepon = no_telepon;
+        this.alamat = alamat;
+    }
+
     public customerModel() {
     }
 

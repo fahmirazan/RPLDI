@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -19,12 +21,33 @@ import javax.swing.JOptionPane;
  */
 public class registerPage extends javax.swing.JFrame {
 
+    registerController control;
     /**
      * Creates new form register
      */
     public registerPage() {
         initComponents();
-        registerController control = new registerController(this);
+        this.control = new registerController(this);
+    }
+
+    public JTextField getRegisterCustomerAlamatField() {
+        return RegisterCustomerAlamatField;
+    }
+
+    public JTextField getRegisterCustomerNamaField() {
+        return RegisterCustomerNamaField;
+    }
+
+    public JPasswordField getRegisterCustomerPasswordField() {
+        return RegisterCustomerPasswordField;
+    }
+
+    public JTextField getRegisterCustomerTeleponField() {
+        return RegisterCustomerTeleponField;
+    }
+
+    public JTextField getRegisterCustomerUsernameField() {
+        return RegisterCustomerUsernameField;
     }
 
     
@@ -235,28 +258,29 @@ public class registerPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RegisterCustomerButtonregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterCustomerButtonregisterActionPerformed
-        String uname = RegisterCustomerUsernameField.getText();
-        String name = RegisterCustomerNamaField.getText();
-        String pass = String.valueOf(RegisterCustomerPasswordField.getPassword());
-        String telp = RegisterCustomerTeleponField.getText();
-        String adres = RegisterCustomerAlamatField.getText();
-
-        PreparedStatement ps;
-        String query = "INSERT INTO `sqlcustomer`(`username`, `nama`, `password`, `no_telp`, `alamat`) VALUES (?,?,?,?,?)";
-        try {
-            ps = (PreparedStatement) DBConnect.getConnection().prepareStatement(query);
-            ps.setString(1, uname);
-            ps.setString(2, name);
-            ps.setString(3, pass);
-            ps.setString(4, telp);
-            ps.setString(5, adres);
-
-            if (ps.executeUpdate() > 0) {
-                JOptionPane.showMessageDialog(null, "New user add");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(registerPage.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        control.prosesRegister();
+//        String uname = RegisterCustomerUsernameField.getText();
+//        String name = RegisterCustomerNamaField.getText();
+//        String pass = String.valueOf(RegisterCustomerPasswordField.getPassword());
+//        String telp = RegisterCustomerTeleponField.getText();
+//        String adres = RegisterCustomerAlamatField.getText();
+//
+//        PreparedStatement ps;
+//        String query = "INSERT INTO `sqlcustomer`(`username`, `nama`, `password`, `no_telp`, `alamat`) VALUES (?,?,?,?,?)";
+//        try {
+//            ps = (PreparedStatement) DBConnect.getConnection().prepareStatement(query);
+//            ps.setString(1, uname);
+//            ps.setString(2, name);
+//            ps.setString(3, pass);
+//            ps.setString(4, telp);
+//            ps.setString(5, adres);
+//
+//            if (ps.executeUpdate() > 0) {
+//                JOptionPane.showMessageDialog(null, "New user add");
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(registerPage.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
     }//GEN-LAST:event_RegisterCustomerButtonregisterActionPerformed
 

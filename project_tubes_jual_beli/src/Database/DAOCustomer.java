@@ -5,6 +5,8 @@
  */
 package Database;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -62,6 +64,24 @@ public class DAOCustomer {
         } catch (SQLException ex) {
             Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
             return null;
+        }
+    }
+    
+    public void Register(customerModel customer) {
+        try {
+            Connection connection = DBConnect.getConnection();
+            String sql = "INSERT INTO `sqlcustomer`(`username`, `nama`, `password`, `no_telp`, `alamat`) VALUES (?,?,?,?,?)";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, customer.getUsername());
+                statement.setString(2, customer.getNama());
+                statement.setString(3, customer.getPassword());
+                statement.setString(4, customer.getNo_telepon());
+                statement.setString(5, customer.getAlamat());
+
+                statement.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOProduct.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
