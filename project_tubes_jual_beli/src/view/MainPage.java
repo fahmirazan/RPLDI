@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -32,7 +33,13 @@ public class MainPage extends javax.swing.JFrame {
         initComponents();
         this.setTitle("E-Shoping");
         customerController = new customerPageController(this, customer);
+        customerController.prosesTampilProduct();
     }
+
+    public JTable getHomeTable() {
+        return homeTable;
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,12 +59,9 @@ public class MainPage extends javax.swing.JFrame {
         searchButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        newlyAdded = new javax.swing.JButton();
-        electronicsButton = new javax.swing.JButton();
+        productButton = new javax.swing.JButton();
         accountButton = new javax.swing.JButton();
         cartButton = new javax.swing.JButton();
-        mobilesButton = new javax.swing.JButton();
-        kidsButton = new javax.swing.JButton();
         cardParentPanel = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -65,9 +69,6 @@ public class MainPage extends javax.swing.JFrame {
         searchPanel = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         searchTable = new javax.swing.JTable();
-        electronicsPanel = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        electronicsTable = new javax.swing.JTable();
         cartPanel = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -76,12 +77,6 @@ public class MainPage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         buyButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        mobilesPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        mobileTable = new javax.swing.JTable();
-        kidsPanel = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        kidsTable = new javax.swing.JTable();
         signUpPanel = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -243,67 +238,35 @@ public class MainPage extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
-        newlyAdded.setBackground(new java.awt.Color(204, 204, 204));
-        newlyAdded.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        newlyAdded.setForeground(new java.awt.Color(102, 102, 102));
-        newlyAdded.setText("Newly Added");
-        newlyAdded.setToolTipText("Check what's new!");
-        newlyAdded.setBorderPainted(false);
-        newlyAdded.setContentAreaFilled(false);
-        newlyAdded.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        newlyAdded.setOpaque(true);
-        newlyAdded.addMouseListener(new java.awt.event.MouseAdapter() {
+        productButton.setBackground(new java.awt.Color(204, 204, 204));
+        productButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        productButton.setForeground(new java.awt.Color(102, 102, 102));
+        productButton.setText("Product");
+        productButton.setToolTipText("Check what's new!");
+        productButton.setBorderPainted(false);
+        productButton.setContentAreaFilled(false);
+        productButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        productButton.setOpaque(true);
+        productButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                newlyAddedMouseClicked(evt);
+                productButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                newlyAddedMouseEntered(evt);
+                productButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                newlyAddedMouseExited(evt);
+                productButtonMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                newlyAddedMousePressed(evt);
+                productButtonMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                newlyAddedMouseReleased(evt);
+                productButtonMouseReleased(evt);
             }
         });
-        newlyAdded.addActionListener(new java.awt.event.ActionListener() {
+        productButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newlyAddedActionPerformed(evt);
-            }
-        });
-
-        electronicsButton.setBackground(new java.awt.Color(204, 204, 204));
-        electronicsButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        electronicsButton.setForeground(new java.awt.Color(102, 102, 102));
-        electronicsButton.setText("Electronics");
-        electronicsButton.setToolTipText("TV, Fridge, Electronic Devices");
-        electronicsButton.setBorderPainted(false);
-        electronicsButton.setContentAreaFilled(false);
-        electronicsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        electronicsButton.setOpaque(true);
-        electronicsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                electronicsButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                electronicsButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                electronicsButtonMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                electronicsButtonMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                electronicsButtonMouseReleased(evt);
-            }
-        });
-        electronicsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                electronicsButtonActionPerformed(evt);
+                productButtonActionPerformed(evt);
             }
         });
 
@@ -374,84 +337,14 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        mobilesButton.setBackground(new java.awt.Color(204, 204, 204));
-        mobilesButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        mobilesButton.setForeground(new java.awt.Color(102, 102, 102));
-        mobilesButton.setText("Mobiles");
-        mobilesButton.setToolTipText("Latest mobiles available on store!");
-        mobilesButton.setBorderPainted(false);
-        mobilesButton.setContentAreaFilled(false);
-        mobilesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mobilesButton.setOpaque(true);
-        mobilesButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mobilesButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mobilesButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                mobilesButtonMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                mobilesButtonMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                mobilesButtonMouseReleased(evt);
-            }
-        });
-        mobilesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mobilesButtonActionPerformed(evt);
-            }
-        });
-
-        kidsButton.setBackground(new java.awt.Color(204, 204, 204));
-        kidsButton.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        kidsButton.setForeground(new java.awt.Color(102, 102, 102));
-        kidsButton.setText("Kids Corner");
-        kidsButton.setToolTipText("Toys, Teddys and much more!");
-        kidsButton.setBorderPainted(false);
-        kidsButton.setContentAreaFilled(false);
-        kidsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        kidsButton.setOpaque(true);
-        kidsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                kidsButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                kidsButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                kidsButtonMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                kidsButtonMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                kidsButtonMouseReleased(evt);
-            }
-        });
-        kidsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kidsButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(newlyAdded)
-                .addGap(23, 23, 23)
-                .addComponent(electronicsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(mobilesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(kidsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
+                .addComponent(productButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 879, Short.MAX_VALUE)
                 .addComponent(cartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(accountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -461,11 +354,8 @@ public class MainPage extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(accountButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(electronicsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(cartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(mobilesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(kidsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(newlyAdded, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(productButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         BackgroundPanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 60, 1210, 50));
@@ -478,7 +368,7 @@ public class MainPage extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Brand Name", "Model", "Price", "Stock", "Features", "Photo"
+                "Nama Barang", "Harga", "Variasi", "Stok", "Foto"
             }
         ) {
             Class[] types = new Class[]{
@@ -569,55 +459,6 @@ public class MainPage extends javax.swing.JFrame {
         );
 
         cardParentPanel.add(searchPanel, "card9");
-
-        electronicsTable.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        electronicsTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Brand Name", "Model", "Price", "Stock", "Features", "Photo"
-            }
-        ) {
-            Class[] types = new Class[]{
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class,
-                java.lang.Integer.class, java.lang.String.class, javax.swing.Icon.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-
-            public Class getColumnClass(int columnIndex){
-                return types [columnIndex];
-            }
-
-        });
-        electronicsTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        electronicsTable.setSelectionBackground(new java.awt.Color(0, 150, 136));
-        electronicsTable.getTableHeader().setReorderingAllowed(false);
-        electronicsTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                electronicsTableMouseClicked(evt);
-            }
-        });
-        jScrollPane3.setViewportView(electronicsTable);
-
-        javax.swing.GroupLayout electronicsPanelLayout = new javax.swing.GroupLayout(electronicsPanel);
-        electronicsPanel.setLayout(electronicsPanelLayout);
-        electronicsPanelLayout.setHorizontalGroup(
-            electronicsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
-        );
-        electronicsPanelLayout.setVerticalGroup(
-            electronicsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
-        );
-
-        cardParentPanel.add(electronicsPanel, "card4");
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -710,104 +551,6 @@ public class MainPage extends javax.swing.JFrame {
         );
 
         cardParentPanel.add(cartPanel, "card8");
-
-        mobileTable.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        mobileTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Brand Name", "Model", "Price", "Stock", "Features", "Photo"
-            }
-        ) {
-            Class[] types = new Class[]{
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class,
-                java.lang.Integer.class, java.lang.String.class, javax.swing.Icon.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-
-            public Class getColumnClass(int columnIndex){
-                return types [columnIndex];
-            }
-
-        });
-        mobileTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mobileTable.setSelectionBackground(new java.awt.Color(0, 150, 136));
-        mobileTable.getTableHeader().setReorderingAllowed(false);
-        mobileTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mobileTableMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(mobileTable);
-
-        javax.swing.GroupLayout mobilesPanelLayout = new javax.swing.GroupLayout(mobilesPanel);
-        mobilesPanel.setLayout(mobilesPanelLayout);
-        mobilesPanelLayout.setHorizontalGroup(
-            mobilesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
-        );
-        mobilesPanelLayout.setVerticalGroup(
-            mobilesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
-        );
-
-        cardParentPanel.add(mobilesPanel, "card3");
-
-        kidsTable.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        kidsTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Brand Name", "Model", "Price", "Stock", "Features", "Photo"
-            }
-        ) {
-            Class[] types = new Class[]{
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class,
-                java.lang.Integer.class, java.lang.String.class, javax.swing.Icon.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-
-            public Class getColumnClass(int columnIndex){
-                return types [columnIndex];
-            }
-
-        });
-        kidsTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        kidsTable.setSelectionBackground(new java.awt.Color(0, 150, 136));
-        kidsTable.getTableHeader().setReorderingAllowed(false);
-        kidsTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                kidsTableMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(kidsTable);
-
-        javax.swing.GroupLayout kidsPanelLayout = new javax.swing.GroupLayout(kidsPanel);
-        kidsPanel.setLayout(kidsPanelLayout);
-        kidsPanelLayout.setHorizontalGroup(
-            kidsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
-        );
-        kidsPanelLayout.setVerticalGroup(
-            kidsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
-        );
-
-        cardParentPanel.add(kidsPanel, "card2");
 
         signUpPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1185,76 +928,41 @@ public class MainPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void newlyAddedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newlyAddedActionPerformed
+    private void productButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productButtonActionPerformed
         // TODO add your handling code here:
         cardParentPanel.removeAll();
         cardParentPanel.add(homePanel);
         cardParentPanel.repaint();
         cardParentPanel.revalidate();
         
+        customerController.prosesTampilProduct();
         //Adding last three entries from every categories in home
-        
-        
-        
-    }//GEN-LAST:event_newlyAddedActionPerformed
+    }//GEN-LAST:event_productButtonActionPerformed
 
-    private void newlyAddedMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMouseReleased
+    private void productButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productButtonMouseReleased
         // TODO add your handling code here:
-        newlyAdded.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_newlyAddedMouseReleased
+        productButton.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_productButtonMouseReleased
 
-    private void newlyAddedMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMousePressed
+    private void productButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productButtonMousePressed
         // TODO add your handling code here:
-        newlyAdded.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_newlyAddedMousePressed
+        productButton.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_productButtonMousePressed
 
-    private void newlyAddedMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMouseExited
+    private void productButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productButtonMouseExited
         // TODO add your handling code here:
-        newlyAdded.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_newlyAddedMouseExited
+        productButton.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_productButtonMouseExited
 
-    private void newlyAddedMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMouseEntered
+    private void productButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productButtonMouseEntered
         // TODO add your handling code here:;
-        newlyAdded.setBackground(new Color(204,204,204));
+        productButton.setBackground(new Color(204,204,204));
 
-    }//GEN-LAST:event_newlyAddedMouseEntered
+    }//GEN-LAST:event_productButtonMouseEntered
 
-    private void newlyAddedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newlyAddedMouseClicked
+    private void productButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productButtonMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_newlyAddedMouseClicked
-
-    private void electronicsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMouseClicked
-        // TODO add your handling code here:
-        cardParentPanel.removeAll();
-        cardParentPanel.add(electronicsPanel);
-        cardParentPanel.repaint();
-        cardParentPanel.revalidate();
-    }//GEN-LAST:event_electronicsButtonMouseClicked
-
-    private void electronicsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMouseEntered
-        // TODO add your handling code here:
-         electronicsButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_electronicsButtonMouseEntered
-
-    private void electronicsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMouseExited
-        // TODO add your handling code here:
-        electronicsButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_electronicsButtonMouseExited
-
-    private void electronicsButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMousePressed
-        // TODO add your handling code here:
-        electronicsButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_electronicsButtonMousePressed
-
-    private void electronicsButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsButtonMouseReleased
-        // TODO add your handling code here:
-         electronicsButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_electronicsButtonMouseReleased
-
-    private void electronicsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_electronicsButtonActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_electronicsButtonActionPerformed
+    }//GEN-LAST:event_productButtonMouseClicked
 
     private void accountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountButtonMouseClicked
         // TODO add your handling code here:
@@ -1323,81 +1031,11 @@ public class MainPage extends javax.swing.JFrame {
         cartButton.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_cartButtonMouseReleased
 
-    private void mobilesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMouseClicked
-        // TODO add your handling code here:
-        cardParentPanel.removeAll();
-        cardParentPanel.add(mobilesPanel);
-        cardParentPanel.repaint();
-        cardParentPanel.revalidate();
-    }//GEN-LAST:event_mobilesButtonMouseClicked
-
-    private void mobilesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMouseEntered
-        // TODO add your handling code here:
-        mobilesButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_mobilesButtonMouseEntered
-
-    private void mobilesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMouseExited
-        // TODO add your handling code here:
-        mobilesButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_mobilesButtonMouseExited
-
-    private void mobilesButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMousePressed
-        // TODO add your handling code here:
-        mobilesButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_mobilesButtonMousePressed
-
-    private void mobilesButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobilesButtonMouseReleased
-        // TODO add your handling code here:
-        mobilesButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_mobilesButtonMouseReleased
-
     
-    private void mobilesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mobilesButtonActionPerformed
-        // TODO add your handling code here:
-        
-
-       
-        
-    }//GEN-LAST:event_mobilesButtonActionPerformed
-
-    private void kidsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMouseClicked
-        // TODO add your handling code here:
-        cardParentPanel.removeAll();
-        cardParentPanel.add(kidsPanel);
-        cardParentPanel.repaint();
-        cardParentPanel.revalidate();
-    }//GEN-LAST:event_kidsButtonMouseClicked
-
-    private void kidsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMouseEntered
-        // TODO add your handling code here:
-        kidsButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_kidsButtonMouseEntered
-
-    private void kidsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMouseExited
-        // TODO add your handling code here:
-        kidsButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_kidsButtonMouseExited
-
-    private void kidsButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMousePressed
-        // TODO add your handling code here:
-        kidsButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_kidsButtonMousePressed
-
-    private void kidsButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsButtonMouseReleased
-        // TODO add your handling code here:
-        kidsButton.setBackground(new Color(204,204,204));
-    }//GEN-LAST:event_kidsButtonMouseReleased
-
-    private void kidsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kidsButtonActionPerformed
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_kidsButtonActionPerformed
-
     private void signInUsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInUsernameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_signInUsernameFieldActionPerformed
-    static String logger;
+
     
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
         // TODO add your handling code here: 
@@ -1506,11 +1144,6 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_signUpNameFieldActionPerformed
 
     
-    private void mobileTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobileTableMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_mobileTableMouseClicked
-
     private void buyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyButtonActionPerformed
         // TODO add your handling code here:
         
@@ -1520,23 +1153,8 @@ public class MainPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_warningLabelActionPerformed
 
-    private void electronicsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_electronicsTableMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_electronicsTableMouseClicked
-
-    private void kidsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsTableMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_kidsTableMouseClicked
-
     private void homeTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeTableMouseClicked
         // TODO add your handling code here:
-       
-        
-        
-        
-        
     }//GEN-LAST:event_homeTableMouseClicked
 
     private void searchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBarActionPerformed
@@ -1567,10 +1185,6 @@ public class MainPage extends javax.swing.JFrame {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         // TODO add your handling code here:
-        //ProductInformation.categoryChooser = "mobiles";
-        
-        
-        
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void searchBarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchBarMouseClicked
@@ -1641,9 +1255,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton cartButton;
     public static javax.swing.JTable cartItemTable;
     private javax.swing.JPanel cartPanel;
-    private javax.swing.JButton electronicsButton;
-    private javax.swing.JPanel electronicsPanel;
-    private javax.swing.JTable electronicsTable;
     private javax.swing.JLabel emptyField;
     private javax.swing.JPanel homePanel;
     private javax.swing.JTable homeTable;
@@ -1673,10 +1284,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
@@ -1687,13 +1295,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JButton kidsButton;
-    private javax.swing.JPanel kidsPanel;
-    private javax.swing.JTable kidsTable;
-    private javax.swing.JTable mobileTable;
-    private javax.swing.JButton mobilesButton;
-    private javax.swing.JPanel mobilesPanel;
-    private javax.swing.JButton newlyAdded;
+    private javax.swing.JButton productButton;
     private javax.swing.JTextField searchBar;
     private javax.swing.JButton searchButton;
     private javax.swing.JPanel searchPanel;
